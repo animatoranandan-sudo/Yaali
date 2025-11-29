@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAALI: KARMA REBELS - Pitch</title>
+    <meta name="description"
+        content="Epic Historical Fantasy set in Late 6th century South India. When Sword meets Wings, destiny unfolds.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">YAALI</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#mythology">Mythology</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#scenes">Scenes</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#hero">Home</a>
+        <a href="#story">Story</a>
+        <a href="#mythology">Mythology</a>
+        <a href="#characters">Characters</a>
+        <a href="#locations">Locations</a>
+        <!-- Navigation Grid -->
+        <section class="nav-grid-section">
+            <div class="button-grid">
+                <a href="#story" class="neon-btn pink-btn">
+                    <i class="fas fa-book-open"></i>
+                    <span>Story / Logline</span>
+                </a>
+                <a href="#mythology" class="neon-btn green-btn">
+                    <i class="fas fa-dragon"></i>
+                    <span>Mythology</span>
+                </a>
+                <a href="#characters" class="neon-btn brown-btn">
+                    <i class="fas fa-users"></i>
+                    <span>Characters</span>
+                </a>
+                <a href="#locations" class="neon-btn orange-btn">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Locations</span>
+                </a>
+                <a href="#scenes" class="neon-btn cyan-btn">
+                    <i class="fas fa-list-ol"></i>
+                    <span>Scene List</span>
+                </a>
+                <a href="#synopsis" class="neon-btn purple-btn">
+                    <i class="fas fa-scroll"></i>
+                    <span>Synopsis</span>
+                </a>
+                <a href="#sets" class="neon-btn light-green-btn">
+                    <i class="fas fa-dungeon"></i>
+                    <span>Set Designs</span>
+                </a>
+                <a href="#char-designs" class="neon-btn teal-btn">
+                    <i class="fas fa-user-astronaut"></i>
+                    <span>Character Designs</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Story / Logline -->
+        <section id="story" class="content-section">
+            <h2 class="section-title">STORY / LOGLINE</h2>
+            <div class="container">
+                <p class="logline-text">
+                    Late 6th century South India. In the Cave of Destiny, two princes face a choice: the Magic Sword of
+                    Pride or the Winged Armor of Awareness. Prince Raya seizes the Sword and becomes a tyrant emperor,
+                    killing his brother Cheliya. Years later, Cheliya's son Ruthra—raised in secret as a masked
+                    thief—discovers his father's relic and transforms into a gigantic Winged Yali. To end Raya's reign,
+                    Ruthra must flood the Empire and face the Dark Sword in an epic battle where awareness conquers
+                    aggression.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mythology -->
+        <section id="mythology" class="content-section alt-bg">
+            <h2 class="section-title">MYTHOLOGY OF YAALI</h2>
+            <div class="container grid-2">
+                <div class="myth-panel">
+                    <h3>The Cave of Destiny</h3>
+                    <p>The sacred cave where two princes faced their choice: the Magic Sword (Pride/Aggression) or the
+                        Winged Armor (Awareness). This moment shaped the fate of the Empire.</p>
+                </div>
+                <div class="myth-panel">
+                    <h3>The Magic Sword</h3>
+                    <p>A relic of Pride and Aggression. Chosen by Prince Raya, it grants immense power fueled by ego and
+                        violence, transforming its wielder into a tyrant consumed by the Dark Sword's fire.</p>
+                </div>
+                <div class="myth-panel">
+                    <h3>The Winged Armor</h3>
+                    <p>A relic of Awareness and Peace. Chosen by Prince Cheliya, it grants the power to transform into a
+                        gigantic Winged Yali—a divine warrior who observes before acting.</p>
+                </div>
+                <div class="myth-panel">
+                    <h3>Yali Symbolism</h3>
+                    <p>Ancient symbol from the Pazhi tribe, representing the bridge between mortal and divine. The Yali
+                        embodies protection, power, and the wisdom to face fear with awareness.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters -->
+        <section id="characters" class="content-section">
+            <h2 class="section-title">CHARACTER DESCRIPTIONS</h2>
+            <div class="container grid-4">
+                <!-- Ruthra -->
+                <div class="char-card">
+                    <img src="images/Characters/Ruthra.png" alt="Ruthra" class="char-img">
+                    <h3>Ruthra</h3>
+                    <p class="role">Protagonist - The Winged Warrior</p>
+                    <p class="bio">Son of Cheliya, exiled Island Prince turned masked thief. Silent thinker with sharp
+                        instincts, dark desert-thief aesthetic with intense eyes. Transforms into a gigantic Winged Yali
+                        to
+                        challenge tyranny.</p>
+                </div>
+                <!-- Kshala -->
+                <div class="char-card">
+                    <img src="images/Characters/KHSALA.png" alt="Kshala" class="char-img">
+                    <h3>Kshala</h3>
+                    <p class="role">Fearless Thief Girl - Moral Anchor</p>
+                    <p class="bio">Survivor of the Silent Dawn Clan. Fierce but empathetic, bold and protective. Wears
+                        the
+                        Blue Crystal Pendant and teaches Ruthra: "Peace begins when the tongue stops reacting."</p>
+                </div>
+                <!-- Emperor Raya -->
+                <div class="char-card">
+                    <img src="images/Characters/Cheliya.png" alt="Emperor Raya" class="char-img">
+                    <h3>Emperor Raya</h3>
+                    <p class="role">Antagonist - The Sword Prince</p>
+                    <p class="bio">Former prince who chose the Magic Sword of Pride. Tyrant ruler who killed his brother
+                        Cheliya and Guru Kala to seize the throne. Wields the Dark Sword fueled by aggression and ego.
+                    </p>
+                </div>
+                <!-- Sidh -->
+                <div class="char-card">
+                    <img src="images/Characters/Guru Kala.png" alt="Sidh" class="char-img">
+                    <h3>Sidh</h3>
+                    <p class="role">Wise Mentor - Minister of the Island</p>
+                    <p class="bio">Son of Guru Kala who raised Ruthra in secret. Knows the truth of the relics and
+                        protects
+                        Ruthra from the Narabali (royal-blood sacrifice) prophecy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations -->
+        <section id="locations" class="content-section alt-bg">
+            <h2 class="section-title">LOCATION DESCRIPTIONS</h2>
+            <div class="container grid-3">
+                <div class="loc-card">
+                    <img src="images/Assets/Cave 01.png" alt="Floating Rock Island" class="loc-img">
+                    <h3>Floating Rock Island</h3>
+                    <p>Ruthra's secret homeland. The only location with volcanic cliff-formations producing rare
+                        Floating
+                        Stones (black porous rock) coveted by the Empire for construction.</p>
+                </div>
+                <div class="loc-card">
+                    <img src="images/Assets/Ashram 01.png" alt="Pazhi Tribe Territory" class="loc-img">
+                    <h3>Pazhi Tribe Territory</h3>
+                    <p>Kshala's home, the Silent Dawn Clan. Underground cave civilization with stone houses carved into
+                        walls, lit by natural sun shafts through waterfalls. Ancient source of Yali symbolism.</p>
+                </div>
+                <div class="loc-card">
+                    <img src="images/Assets/Cave 03.png" alt="The Capital" class="loc-img">
+                    <h3>The Capital - Mahameru Palace</h3>
+                    <p>Tyrannical center of the Empire. Temple complex with enslaved sculptors. The river source behind
+                        the
+                        palace is key to Ruthra's flood plan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scene List -->
+        <section id="scenes" class="content-section">
+            <h2 class="section-title">SCENE LIST</h2>
+            <div class="container">
+                <h3 style="color: var(--neon-cyan); margin-bottom: 1.5rem; text-align: center;">ACT 1: THE MASKED THIEF
+                </h3>
+                <ol class="scene-list">
+                    <li>Tribute Dawn - Ruthra ambushes the convoy at the mountain bridge</li>
+                    <li>Bell Alarm Network - Escape through underwater tunnel triggers Empire surveillance</li>
+                    <li>Viruka's Wrath - Rajaguru demands retribution, doubles island tribute</li>
+                    <li>Palace Yard Torment - Ruthra witnesses enslaved sculptors being whipped</li>
+                    <li>Kitchen Chase - Ruthra saves Kshala stealing food for her kin</li>
+                    <li>Elder's Lesson - Pazhi tribe teaching: "Fear takes form; when you face it, it bows"</li>
+                    <li>Council Hall - Viruka demands the Island's floating stones</li>
+                    <li>The Narabali Prophecy - Sidh learns of royal-blood sacrifice targeting Ruthra</li>
+                    <li>The Withdrawal - Ruthra misjudges Sidh's obedience</li>
+                    <li>The Truth - Sidh confesses Cheliya's murder, freezing the night</li>
+                </ol>
+
+                <div
+                    style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(90deg, var(--neon-red), var(--neon-orange)); border-radius: 10px;">
+                    <h2
+                        style="font-family: var(--font-heading); font-size: 2rem; color: #000; text-transform: uppercase; letter-spacing: 3px;">
+                        INTERVAL: "THE TRUTH TAKES WINGS"
+                    </h2>
+                </div>
+
+                <h3 style="color: var(--neon-purple); margin-bottom: 1.5rem; text-align: center;">ACT 2: THE WINGED
+                    WARRIOR
+                </h3>
+                <ol class="scene-list" start="11">
+                    <li>The Hidden Chest - Ruthra's mother reveals Cheliya's rusted armguards and broken feathers</li>
+                    <li>The Awakening Pulse - Armor responds to Ruthra's heartbeat, flashing memories</li>
+                    <li>The Departure - Ruthra boards imperial barge carrying armor in secret</li>
+                    <li>Underground Prison - Imprisoned in darkness, experiences Sparrow Dream</li>
+                    <li>Transformation Spark - Escapes using partial, fleeting wings</li>
+                    <li>Secret Meeting - Confirms the Sword's power is awakening</li>
+                    <li>Reunion with Kshala - Plan to stop the Sword and free her tribe</li>
+                    <li>Arena Trial - Emperor Raya challenges Ruthra to a duel</li>
+                    <li>The Transformation of Dawn - Ruthra becomes Gigantic Winged Yali</li>
+                    <li>The Flood - Redirects river to flood the capital, beginning countdown</li>
+                    <li>Sky-Yali vs The Sword - Thunderous collision of Wings and Dark Sword fire</li>
+                    <li>Treasury Heist - Kshala's tribe raids vaults, freeing captives</li>
+                    <li>Yali Control Rhythm - Kshala's stone-clicks dissolve Ruthra's fear into clarity</li>
+                    <li>Final Vision - The Sword's fire dies, Ruthra ends Raya with Sidh's help</li>
+                    <li>New Dawn - Queen takes throne, ends slavery, Ruthra takes flight</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Synopsis -->
+        <section id="synopsis" class="content-section alt-bg">
+            <h2 class="section-title">SYNOPSIS</h2>
+            <div class="container">
+                <p>Late 6th century South India, during the Irundha Kaalam ("Dark Period")—a time of minimal political
+                    records but rich spiritual wisdom. In the Cave of Destiny, two princes face an ancient choice: the
+                    Magic
+                    Sword of Pride or the Winged Armor of Awareness.</p>
+                <br>
+                <p>Prince Raya seizes the Sword, consumed by ambition. Prince Cheliya chooses the Wings, embracing
+                    awareness. Raya becomes a tyrant emperor, murdering Cheliya and Guru Kala to claim absolute power.
+                    But
+                    Cheliya's son survives.</p>
+                <br>
+                <p>Ruthra grows up in secret on the Floating Rock Island, raised by Sidh (son of Guru Kala). As a masked
+                    thief, he raids the Empire's tribute convoys, becoming a phantom legend. When he saves Kshala—a
+                    fearless
+                    thief from the Silent Dawn Clan—he learns the ancient Pazhi philosophy: observe before reacting,
+                    face
+                    fear with awareness.</p>
+                <br>
+                <p>Discovering the truth of his father's murder, Ruthra awakens the Winged Armor. The rusted relics
+                    pulse
+                    with life, and he transforms into a gigantic Winged Yali—a divine warrior bridging mortal and
+                    celestial
+                    realms. Emperor Raya, wielding the Dark Sword's demonic fire, prepares the Narabali sacrifice to
+                    cement
+                    his power.</p>
+                <br>
+                <p>Ruthra's plan: flood the capital by redirecting the river source behind Mahameru Palace. As the
+                    waters
+                    rise, the Sky-Yali and the Dark Sword collide in thunderous fury. Kshala performs the ancient Yali
+                    control rhythm—stone-clicks, breath, gestures—dissolving Ruthra's fear into calm clarity. The
+                    Sword's
+                    fire dies.</p>
+                <br>
+                <p>With Sidh's help, Ruthra ends Raya's reign. The Queen takes the throne, decreeing an end to slavery
+                    and
+                    tyranny. As dawn breaks over the flooded Empire, Ruthra spreads his wings one last time, soaring
+                    into
+                    the new era—where awareness has conquered aggression, and the Karma Cycle finds balance.</p>
+            </div>
+        </section>
+
+        <!-- Set Designs -->
+        <section id="sets" class="content-section">
+            <h2 class="section-title">SET DESIGNS</h2>
+            <div class="container">
+                <div class="grid-3">
+                    <img src="images/Assets/Setdesign 01.png" alt="Set Design 1" class="design-img">
+                    <img src="images/Assets/Setdesign 02.png" alt="Set Design 2" class="design-img">
+                    <img src="images/Assets/Setdesign 03.png" alt="Set Design 3" class="design-img">
+                    <img src="images/Assets/Setdesign 04.png" alt="Set Design 4" class="design-img">
+                    <img src="images/Assets/Cave 02.png" alt="Cave Design" class="design-img">
+                    <img src="images/Assets/Ashram 02.png" alt="Ashram Design" class="design-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Designs -->
+        <section id="char-designs" class="content-section alt-bg">
+            <h2 class="section-title">CHARACTER DESIGNS</h2>
+            <div class="container grid-4">
+                <div class="design-card">
+                    <img src="images/Characters/Yaali 01.png" alt="Yaali Design 1" class="design-img">
+                    <p>Yaali Form 1</p>
+                </div>
+                <div class="design-card">
+                    <img src="images/Characters/Yaali 02.png" alt="Yaali Design 2" class="design-img">
+                    <p>Yaali Form 2</p>
+                </div>
+                <div class="design-card">
+                    <img src="images/Characters/Cheliya.png" alt="Cheliya Design" class="design-img">
+                    <p>Cheliya Concept</p>
+                </div>
+                <div class="design-card">
+                    <img src="images/Characters/Ruthra.png" alt="Ruthra Design" class="design-img">
+                    <p>Ruthra Concept</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 YAALI: KARMA REBELS. All Rights Reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
