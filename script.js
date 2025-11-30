@@ -68,3 +68,32 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+// Parallax Mouse-Tracking Effect for Hero Section
+(function initParallax() {
+    const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    
+    if (!hero || !heroContent) return;
+    
+    // Only enable on non-touch devices
+    if ('ontouchstart' in window) return;
+    
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        
+        requestAnimationFrame(() => {
+            heroContent.style.transform = `
+                translate3d({x * 20}px, {y * 20}px, 0)
+                rotateY({x * 5}deg)
+                rotateX({-y * 5}deg)
+            `;
+        });
+    });
+    
+    hero.addEventListener('mouseleave', () => {
+        heroContent.style.transform = 'translate3d(0, 0, 0) rotateY(0) rotateX(0)';
+    });
+})();
