@@ -442,20 +442,23 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    width: auto;
+    /* Ensure aspect ratio is preserved */
     display: block;
 }
+
 /* Parallax 3D Effect for Hero Section */
 .hero {
-    perspective: 1000px !important;
-    transform-style: preserve-3d !important;
+    /* perspective: 1000px !important; */
+    /* transform-style: preserve-3d !important; */
 }
 
 .hero::before {
-    will-change: transform;
+    /* will-change: transform; */
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .hero-content {
-    will-change: transform;
+    /* will-change: transform; */
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
