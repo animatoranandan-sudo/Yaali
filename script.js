@@ -1,21 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-menu a');
-
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        // Animate hamburger icon (optional)
-        hamburger.classList.toggle('open');
-    });
-
-    // Close mobile menu when a link is clicked
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-    });
+    // Navigation Logic removed as per user request (top nav removed)
 
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -40,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Video Gallery Modal (Placeholder Logic)
     const videoThumbs = document.querySelectorAll('.video-thumb');
-    
+
     videoThumbs.forEach(thumb => {
         thumb.addEventListener('click', () => {
             alert('Video Player Modal would open here. (Placeholder)');
@@ -73,26 +57,26 @@ document.addEventListener('DOMContentLoaded', () => {
 (function initParallax() {
     const hero = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
-    
+
     if (!hero || !heroContent) return;
-    
+
     // Only enable on non-touch devices
     if ('ontouchstart' in window) return;
-    
+
     hero.addEventListener('mousemove', (e) => {
         const rect = hero.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        
+
         requestAnimationFrame(() => {
             heroContent.style.transform = `
-                translate3d({x * 20}px, {y * 20}px, 0)
-                rotateY({x * 5}deg)
-                rotateX({-y * 5}deg)
+                translate3d(${x * 20}px, ${y * 20}px, 0)
+                rotateY(${x * 5}deg)
+                rotateX(${-y * 5}deg)
             `;
         });
     });
-    
+
     hero.addEventListener('mouseleave', () => {
         heroContent.style.transform = 'translate3d(0, 0, 0) rotateY(0) rotateX(0)';
     });

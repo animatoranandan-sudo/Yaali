@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAALI: KARMA REBELS - Game Pitch</title>
-    <meta name="description" content="Game Pitch details for YAALI: KARMA REBELS. Lead Role Rotation and Scene Text.">
+    <meta name="description" content="Full Game Campaign and Level Structure for YAALI: KARMA REBELS.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <style>
         /* Specific styles for Game Pitch page */
         .pitch-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -26,497 +26,810 @@
             margin-bottom: 4rem;
         }
 
-        .rotation-video {
-            width: 100%;
-            max-width: 800px;
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-            border: 1px solid #333;
-        }
-
-        .text-grid {
+        .video-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
-        .text-column {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
+        .rotation-video {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            border: 1px solid #333;
+            /* Removed fixed aspect-ratio to allow full vertical view */
+            object-fit: contain;
+            max-height: 80vh;
+            /* Prevent excessive scrolling for tall videos */
+        }
+
+        /* 4-Column Table Styles */
+        .level-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 3rem;
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        .text-column h3 {
-            color: var(--neon-orange);
+        .level-table th,
+        .level-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: top;
+        }
+
+        .level-table th {
+            background: rgba(var(--neon-cyan-rgb), 0.1);
+            color: var(--neon-cyan);
             font-family: var(--font-heading);
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
         }
 
-        .text-column p {
+        .level-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .col-sno {
+            width: 5%;
+            font-weight: bold;
+            color: #888;
+        }
+
+        .col-eng {
+            width: 30%;
             color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .col-tam {
+            width: 30%;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .col-gameplay {
+            width: 35%;
+            color: var(--neon-cyan);
+            font-style: italic;
+        }
+
+        .level-header {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(var(--neon-purple-rgb), 0.2));
+            color: #fff;
+            padding: 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-top: 3rem;
+            border-left: 5px solid var(--neon-purple);
+        }
+
+        .section-separator {
+            border-top: 2px solid #333;
+            margin: 4rem 0;
         }
 
         @media (max-width: 768px) {
-            .text-grid {
-                grid-template-columns: 1fr;
+
+            .level-table,
+            .level-table tbody,
+            .level-table tr,
+            .level-table td {
+                display: block;
+                width: 100%;
             }
-        }
 
-        .level-card {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--neon-cyan);
-        }
+            .level-table thead {
+                display: none;
+            }
 
-        .level-card h4 {
-            color: #fff;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 0.5rem;
-            font-size: 1rem;
-            line-height: 1.4;
-        }
+            .level-table tr {
+                margin-bottom: 1.5rem;
+                border: 1px solid #333;
+                background: rgba(0, 0, 0, 0.3);
+            }
 
-        .level-card p {
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            color: #ccc;
-        }
+            .level-table td {
+                padding: 0.8rem;
+                text-align: right;
+                position: relative;
+                padding-left: 30%;
+            }
 
-        .level-card strong {
-            color: var(--neon-cyan);
+            .level-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 30%;
+                padding-left: 1rem;
+                font-weight: bold;
+                text-align: left;
+                color: var(--neon-cyan);
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">YAALI</div>
-        <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="index.html#story">STORY</a></li>
-            <li><a href="index.html#synopsis">SYNOPSIS</a></li>
-            <li><a href="index.html#mythology">MYTHOLOGY</a></li>
-            <li><a href="index.html#characters">CHARACTERS</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <!-- Navigation (Buttons only) -->
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="neon-btn red-btn" style="padding: 10px 20px; font-size: 0.9rem;">&larr; BACK TO
+            HOME</a>
+    </div>
 
     <!-- Hero / Rotation Section -->
-    <section class="hero" style="min-height: auto; padding-top: 8rem;">
-        <div class="hero-content">
-            <h1 class="stone-text" style="font-size: 3rem; margin-bottom: 2rem; color: var(--neon-cyan);">LEAD ROLE
-                ROTATION</h1>
-
-            <div class="rotation-section">
-                <video class="rotation-video" autoplay loop muted playsinline>
-                    <source src="images/Characters/Turnaround/grok-video-3982c922-0d0e-4bc4-9ab9-109908df6c62.mp4"
-                        type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+    <section class="hero" style="min-height: auto; padding-top: 6rem; padding-bottom: 2rem;">
+        <div class="pitch-container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <img src="images/Titles/Project Title.png" alt="YAALI: KARMA REBELS"
+                    style="max-width: 80%; height: auto; display: block; margin: 0 auto 1rem auto;">
+                <h2
+                    style="color: var(--neon-orange); font-family: var(--font-heading); font-size: 2.2rem; letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 0 20px rgba(255, 140, 0, 0.5);">
+                    FULL GAME CAMPAIGN</h2>
+                <h3
+                    style="color: var(--neon-cyan); font-family: var(--font-body); letter-spacing: 2px; margin-top: 0.5rem; font-weight: 300;">
+                    LEVEL STRUCTURE & TURNAROUNDS
+                </h3>
             </div>
 
-            <div class="button-grid" style="justify-content: center; margin-bottom: 3rem;">
-                <a href="index.html" class="neon-btn red-btn">BACK TO HOME</a>
+            <!-- Character Turnaround Gallery -->
+            <h3
+                style="color: var(--neon-purple); font-family: var(--font-heading); text-align: center; margin-bottom: 2rem;">
+                CHARACTER TURNAROUNDS</h3>
+            <div class="video-grid">
+                <div>
+                    <h4 style="color: #fff; text-align: center; margin-bottom: 1rem;">KSHALA</h4>
+                    <video class="rotation-video" autoplay loop muted playsinline>
+                        <source src="images/Characters/Turnaround/KSHALA Turnaround no weapon.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <h4 style="color: #fff; text-align: center; margin-bottom: 1rem;">RUTHRA</h4>
+                    <video class="rotation-video" autoplay loop muted playsinline>
+                        <source src="images/Characters/Turnaround/RUTHRA Turnaround.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Scene Text Section -->
-    <section class="content-section alt-bg">
-        <div class="container">
-            <h2 class="section-title">GAME DETAILS</h2>
+    <!-- Level Structure Table -->
+    <section class="content-section" style="padding-top: 0;">
+        <div class="pitch-container">
 
-            <div class="text-grid">
-                <!-- Prologue -->
-                <div class="text-column">
-                    <h3>PROLOGUE</h3>
-                    <div class="level-card">
-                        <h4>LEVEL 0 — The Fall of Lemuria (லெமூரியாவின் வீழ்ச்சி)</h4>
-                        <p><strong>0.1:</strong> Lemuria’s rise and collapse; misuse of cosmic energy creates karmic
-                            imbalance.</p>
-                        <p><strong>TAM:</strong> லெமூரியாவின் எழுச்சி மற்றும் அழிவு; பிரபஞ்ச ஆற்றல் தவறாகப் பயன்படுத்தி
-                            கர்ம சமநிலை சிதறுகிறது.</p>
-                        <p><strong>Scene:</strong> Cutscene: Massive ancient civilization, energy temples collapsing,
-                            tsunamis swallowing cities. Worldbuilding VO.</p>
-                    </div>
-                    <div class="level-card">
-                        <h4>0.2: Survivors</h4>
-                        <p><strong>ENG:</strong> Survivors reach early Tamilakam carrying echoes of Lemurian knowledge.
-                        </p>
-                        <p><strong>TAM:</strong> உயிர் தப்பியோர் தமிழக கரைகளை அடைகிறார்கள்.</p>
-                        <p><strong>Scene:</strong> Cutscene: Ships wrecked, rituals turning into folklore, cosmic energy
-                            remains underground.</p>
-                    </div>
-                </div>
+            <!-- LEVEL 0 -->
+            <div class="level-header">LEVEL 0 — The Fall of Lemuria (லெமூரியாவின் வீழ்ச்சி)</div>
+            <table class="level-table">
+                <thead>
+                    <tr>
+                        <th class="col-sno">S.No</th>
+                        <th class="col-eng">Summary (ENG)</th>
+                        <th class="col-tam">Summary (TAM)</th>
+                        <th class="col-gameplay">Gameplay / Cutscene</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">0.1</td>
+                        <td data-label="Summary (ENG)">Lemuria’s rise and collapse; misuse of cosmic energy creates
+                            karmic imbalance.</td>
+                        <td data-label="Summary (TAM)">லெமூரியாவின் எழுச்சி மற்றும் அழிவு; பிரபஞ்ச ஆற்றல் தவறாகப்
+                            பயன்படுத்தி கர்ம சமநிலை சிதறுகிறது.</td>
+                        <td data-label="Gameplay">Cutscene: Massive ancient civilization, energy temples collapsing,
+                            tsunamis swallowing cities. Worldbuilding VO.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">0.2</td>
+                        <td data-label="Summary (ENG)">Survivors reach early Tamilakam carrying echoes of Lemurian
+                            knowledge.</td>
+                        <td data-label="Summary (TAM)">உயிர் தப்பியோர் தமிழக கரைகளை அடைகிறார்கள்.</td>
+                        <td data-label="Gameplay">Cutscene: Ships wrecked, rituals turning into folklore, cosmic energy
+                            remains underground.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <!-- Mainplay -->
-                <div class="text-column">
-                    <h3 style="color: var(--neon-purple);">MAINPLAY</h3>
+            <!-- LEVEL 1 -->
+            <div class="level-header">LEVEL 1 — Princes of the Ashram (ஆசிரம இளவரசர்கள்)</div>
+            <table class="level-table">
+                <thead>
+                    <tr>
+                        <th class="col-sno">S.No</th>
+                        <th class="col-eng">Summary (ENG)</th>
+                        <th class="col-tam">Summary (TAM)</th>
+                        <th class="col-gameplay">Gameplay / Cutscene</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">1.1</td>
+                        <td data-label="Summary (ENG)">Princes Chezliya & Raya train at Stone Forest Ashram.</td>
+                        <td data-label="Summary (TAM)">செழியா & ராயா கற்வன ஆசிரமத்தில் பயிற்சி.</td>
+                        <td data-label="Gameplay">Gameplay Tutorial: Melee basics, archery, parrying, focus meter.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">1.2</td>
+                        <td data-label="Summary (ENG)">Guru teaches discipline: “Choices define you.”</td>
+                        <td data-label="Summary (TAM)">குருவின் போதனை: “வலிமை அல்ல, தேர்வு தான் உண்மை.”</td>
+                        <td data-label="Gameplay">Cutscene setting the moral contrast between the two princes.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">1.3</td>
+                        <td data-label="Summary (ENG)">Guru Kala announces a spiritual trial at the mountain cave.</td>
+                        <td data-label="Summary (TAM)">குரு கலா மலைக்குகைச் சோதனையை அறிவிக்கிறார்.</td>
+                        <td data-label="Gameplay">Cutscene → Player Control: Walk with both princes toward the mountain.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">1.4</td>
+                        <td data-label="Summary (ENG)">Mist path to the sacred peak, contrasting emotions.</td>
+                        <td data-label="Summary (TAM)">பனிமூட்டப் பாதை, இருவரின் வேறுபட்ட உணர்ச்சிகள்.</td>
+                        <td data-label="Gameplay">Traversal Gameplay introducing climbing, ledge walking.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 1 — Princes of the Ashram (ஆசிரம இளவரசர்கள்)</h4>
-                        <p><strong>1.1:</strong> Princes Chezliya & Raya train at Stone Forest Ashram.</p>
-                        <p><strong>TAM:</strong> செழியா & ராயா கற்வன ஆசிரமத்தில் பயிற்சி.</p>
-                        <p><strong>Gameplay:</strong> Tutorial: Melee basics, archery, parrying, focus meter.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>1.2:</strong> Guru teaches discipline: “Choices define you.”</p>
-                        <p><strong>TAM:</strong> குருவின் போதனை: “வலிமை அல்ல, தேர்வு தான் உண்மை.”</p>
-                        <p><strong>Scene:</strong> Cutscene setting the moral contrast between the two princes.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>1.3:</strong> Guru Kala announces a spiritual trial at the mountain cave.</p>
-                        <p><strong>TAM:</strong> குரு கலா மலைக்குகைச் சோதனையை அறிவிக்கிறார்.</p>
-                        <p><strong>Gameplay:</strong> Walk with both princes toward the mountain.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>1.4:</strong> Mist path to the sacred peak, contrasting emotions.</p>
-                        <p><strong>TAM:</strong> பனிமூட்டப் பாதை, இருவரின் வேறுபட்ட உணர்ச்சிகள்.</p>
-                        <p><strong>Gameplay:</strong> Traversal introducing climbing, ledge walking.</p>
-                    </div>
+            <!-- LEVEL 2 -->
+            <div class="level-header">LEVEL 2 — Trials of the Mountain (மலைச் சோதனைகள்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">2.1</td>
+                        <td data-label="Summary (ENG)">Encounter with Saint; deer, python, compassion test.</td>
+                        <td data-label="Summary (TAM)">முனிவர், மான், பாம்பு — செழியாவின் கருணைச் சோதனை.</td>
+                        <td data-label="Gameplay">Interactive Moral Event: Player uses bow to save deer; fate twists.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">2.2</td>
+                        <td data-label="Summary (ENG)">Deer is killed by tiger — saint explains karma.</td>
+                        <td data-label="Summary (TAM)">புலி மானை கொல்வது; கர்ம விளக்கம்.</td>
+                        <td data-label="Gameplay">Cutscene deepening the karmic loop theme.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">2.3</td>
+                        <td data-label="Summary (ENG)">Narrow cliff ledge trial.</td>
+                        <td data-label="Summary (TAM)">குறுகிய பாறைச் சரிவு சோதனை.</td>
+                        <td data-label="Gameplay">Gameplay: Balance mechanic, wind physics.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">2.4</td>
+                        <td data-label="Summary (ENG)">Energy current river crossing.</td>
+                        <td data-label="Summary (TAM)">ஆற்றின் ஆற்றல் ஓட்டம் கடத்தல்.</td>
+                        <td data-label="Gameplay">Gameplay: Two styles — Chezliya balances, Raya leaps aggressively.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">2.5</td>
+                        <td data-label="Summary (ENG)">Anti-gravity cave chamber.</td>
+                        <td data-label="Summary (TAM)">எதிர்ப்பு-ஈர்ப்பு குகை.</td>
+                        <td data-label="Gameplay">Puzzle Platforming: Jump timing, floating stones.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 2 — Trials of the Mountain (மலைச் சோதனைகள்)</h4>
-                        <p><strong>2.1:</strong> Encounter with Saint; deer, python, compassion test.</p>
-                        <p><strong>TAM:</strong> முனிவர், மான், பாம்பு — செழியாவின் கருணைச் சோதனை.</p>
-                        <p><strong>Event:</strong> Player uses bow to save deer; fate twists.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>2.2:</strong> Deer is killed by tiger — saint explains karma.</p>
-                        <p><strong>TAM:</strong> புலி மானை கொல்வது; கர்ம விளக்கம்.</p>
-                        <p><strong>Scene:</strong> Cutscene deepening the karmic loop theme.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>2.3:</strong> Narrow cliff ledge trial.</p>
-                        <p><strong>TAM:</strong> குறுகிய பாறைச் சரிவு சோதனை.</p>
-                        <p><strong>Gameplay:</strong> Balance mechanic, wind physics.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>2.4:</strong> Energy current river crossing.</p>
-                        <p><strong>TAM:</strong> ஆற்றின் ஆற்றல் ஓட்டம் கடத்தல்.</p>
-                        <p><strong>Gameplay:</strong> Two styles — Chezliya balances, Raya leaps aggressively.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>2.5:</strong> Anti-gravity cave chamber.</p>
-                        <p><strong>TAM:</strong> எதிர்ப்பு-ஈர்ப்பு குகை.</p>
-                        <p><strong>Gameplay:</strong> Puzzle Platforming: Jump timing, floating stones.</p>
-                    </div>
+            <!-- LEVEL 3 -->
+            <div class="level-header">LEVEL 3 — The Cave of Destiny (விதியின் குகை)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">3.1</td>
+                        <td data-label="Summary (ENG)">Cave opens; glyphs glow.</td>
+                        <td data-label="Summary (TAM)">குகை திறக்கிறது; குறியீடுகள் ஒளிர்கின்றன.</td>
+                        <td data-label="Gameplay">Cutscene establishing ancient Lemurian energy.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">3.2</td>
+                        <td data-label="Summary (ENG)">Path splits between princes.</td>
+                        <td data-label="Summary (TAM)">பாதை இரண்டாகப் பிரிகிறது.</td>
+                        <td data-label="Gameplay">Interactive Choice: Player observes difference but cannot change
+                            destiny.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">3.3</td>
+                        <td data-label="Summary (ENG)">Chezliya gains Winged Crystalline Armor.</td>
+                        <td data-label="Summary (TAM)">செழியா இறக்கைக் கவசம் பெறுகிறார்.</td>
+                        <td data-label="Gameplay">Transformation Cutscene + short flight tutorial.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">3.4</td>
+                        <td data-label="Summary (ENG)">Raya touches Sword of Pride → corrupted transformation.</td>
+                        <td data-label="Summary (TAM)">ராயா செருக்கு வாளால் இருளில் மாறுகிறான்.</td>
+                        <td data-label="Gameplay">Cutscene + boss entrance.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">3.5</td>
+                        <td data-label="Summary (ENG)">Raya attacks Chezliya; first boss fight (unwinnable).</td>
+                        <td data-label="Summary (TAM)">ராயா செழியாவைத் தாக்குகிறான்; வெல்ல முடியாத சண்டை.</td>
+                        <td data-label="Gameplay">Gameplay: Player fights but health auto-drops. Forced defeat.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">3.6</td>
+                        <td data-label="Summary (ENG)">Chezliya dies; wings shatter.</td>
+                        <td data-label="Summary (TAM)">செழியா கொல்லப்படுகிறான்; இறக்கைகள் உடைகின்றன.</td>
+                        <td data-label="Gameplay">Cinematic Death Scene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">3.7</td>
+                        <td data-label="Summary (ENG)">Raya kills Guru Kala.</td>
+                        <td data-label="Summary (TAM)">ராயா குரு கலாவைக் கொல்கிறான்.</td>
+                        <td data-label="Gameplay">Cutscene: Sets Raya as tyrant.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">3.8</td>
+                        <td data-label="Summary (ENG)">Sidh & Gowri escape with wing fragments.</td>
+                        <td data-label="Summary (TAM)">சித் & கௌரி இறகு சிதறல்களுடன் தப்புகிறார்கள்.</td>
+                        <td data-label="Gameplay">Cutscene → Title Card: “YALI — SHADOWS OF THE WING”.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 3 — The Cave of Destiny (விதியின் குகை)</h4>
-                        <p><strong>3.1:</strong> Cave opens; glyphs glow.</p>
-                        <p><strong>TAM:</strong> குகை திறக்கிறது; குறியீடுகள் ஒளிர்கின்றன.</p>
-                        <p><strong>Scene:</strong> Cutscene establishing ancient Lemurian energy.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>3.2:</strong> Path splits between princes.</p>
-                        <p><strong>TAM:</strong> பாதை இரண்டாகப் பிரிகிறது.</p>
-                        <p><strong>Choice:</strong> Player observes difference but cannot change destiny.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>3.3:</strong> Chezliya gains Winged Crystalline Armor.</p>
-                        <p><strong>TAM:</strong> செழியா இறக்கைக் கவசம் பெறுகிறார்.</p>
-                        <p><strong>Scene:</strong> Transformation Cutscene + short flight tutorial.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>3.4:</strong> Raya touches Sword of Pride → corrupted transformation.</p>
-                        <p><strong>TAM:</strong> ராயா செருக்கு வாளால் இருளில் மாறுகிறான்.</p>
-                        <p><strong>Scene:</strong> Cutscene + boss entrance.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>3.5:</strong> Raya attacks Chezliya; first boss fight (unwinnable).</p>
-                        <p><strong>TAM:</strong> ராயா செழியாவைத் தாக்குகிறான்; வெல்ல முடியாத சண்டை.</p>
-                        <p><strong>Gameplay:</strong> Player fights but health auto-drops. Forced defeat.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>3.6:</strong> Chezliya dies; wings shatter.</p>
-                        <p><strong>TAM:</strong> செழியா கொல்லப்படுகிறான்; இறக்கைகள் உடைகின்றன.</p>
-                        <p><strong>Scene:</strong> Cinematic Death Scene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>3.7:</strong> Raya kills Guru Kala.</p>
-                        <p><strong>TAM:</strong> ராயா குரு கலாவைக் கொல்கிறான்.</p>
-                        <p><strong>Scene:</strong> Cutscene: Sets Raya as tyrant.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>3.8:</strong> Sidh & Gowri escape with wing fragments.</p>
-                        <p><strong>TAM:</strong> சித் & கௌரி இறகு சிதறல்களுடன் தப்புகிறார்கள்.</p>
-                        <p><strong>Scene:</strong> Cutscene → Title Card: “YALI — SHADOWS OF THE WING”.</p>
-                    </div>
+            <!-- LEVEL 4 -->
+            <div class="level-header">LEVEL 4 — The Masked Rebel (முகமூடி கிளர்ச்சியாளர்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">4.1</td>
+                        <td data-label="Summary (ENG)">Ruthra ambushes empire convoy at waterfall bridge.</td>
+                        <td data-label="Summary (TAM)">நீர்வீழ்ச்சி பாலத்தில் ரூத்ரா தாக்குதல்.</td>
+                        <td data-label="Gameplay">Stealth + Ambush Mission (AC / Tsushima style).</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">4.2</td>
+                        <td data-label="Summary (ENG)">Escape via underwater tunnels.</td>
+                        <td data-label="Summary (TAM)">நீருக்கடியில் தப்பித்தல்.</td>
+                        <td data-label="Gameplay">Traversal + Swim gameplay.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">4.3</td>
+                        <td data-label="Summary (ENG)">Empire alarm system activates.</td>
+                        <td data-label="Summary (TAM)">பேரரசு அபாய மணிகள்.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 4 — The Masked Rebel (முகமூடி கிளர்ச்சியாளர்)</h4>
-                        <p><strong>4.1:</strong> Ruthra ambushes empire convoy at waterfall bridge.</p>
-                        <p><strong>TAM:</strong> நீர்வீழ்ச்சி பாலத்தில் ரூத்ரா தாக்குதல்.</p>
-                        <p><strong>Gameplay:</strong> Stealth + Ambush Mission.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>4.2:</strong> Escape via underwater tunnels.</p>
-                        <p><strong>TAM:</strong> நீருக்கடியில் தப்பித்தல்.</p>
-                        <p><strong>Gameplay:</strong> Traversal + Swim gameplay.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>4.3:</strong> Empire alarm system activates.</p>
-                        <p><strong>TAM:</strong> பேரரசு அபாய மணிகள்.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                    </div>
+            <!-- LEVEL 5 -->
+            <div class="level-header">LEVEL 5 — Shadows of the Empire (பேரரசின் நிழல்கள்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">5.1</td>
+                        <td data-label="Summary (ENG)">Virukka issues threat; bounty doubled.</td>
+                        <td data-label="Summary (TAM)">விருக்கா மிரட்டல்; காணிக்கை இரட்டிப்பு.</td>
+                        <td data-label="Gameplay">Cutscene: Strengthening antagonist.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">5.2</td>
+                        <td data-label="Summary (ENG)">Ruthra vows to end empire greed.</td>
+                        <td data-label="Summary (TAM)">பேரரசின் பேராசை முடிக்க ரூத்ரா உறுதி.</td>
+                        <td data-label="Gameplay">Dialogue Cutscene.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 5 — Shadows of the Empire (பேரரசின் நிழல்கள்)</h4>
-                        <p><strong>5.1:</strong> Virukka issues threat; bounty doubled.</p>
-                        <p><strong>TAM:</strong> விருக்கா மிரட்டல்; காணிக்கை இரட்டிப்பு.</p>
-                        <p><strong>Scene:</strong> Cutscene: Strengthening antagonist.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>5.2:</strong> Ruthra vows to end empire greed.</p>
-                        <p><strong>TAM:</strong> பேரரசின் பேராசை முடிக்க ரூத்ரா உறுதி.</p>
-                        <p><strong>Scene:</strong> Dialogue Cutscene.</p>
-                    </div>
+            <!-- LEVEL 6 -->
+            <div class="level-header">LEVEL 6 — The Underworld Path (நிலத்தடி பாதை)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">6.1</td>
+                        <td data-label="Summary (ENG)">Ruthra departs via underwater secret route.</td>
+                        <td data-label="Summary (TAM)">ரகசிய நீர்வழிப் பாதையில் புறப்படுகிறான்.</td>
+                        <td data-label="Gameplay">Exploration gameplay.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">6.2</td>
+                        <td data-label="Summary (ENG)">Karuppasamy illusion scares guards.</td>
+                        <td data-label="Summary (TAM)">கருப்பசாமி மாயை; வீரர்கள் ஓடுகின்றனர்.</td>
+                        <td data-label="Gameplay">Light puzzle: Shadow/torch manipulation.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 6 — The Underworld Path (நிலத்தடி பாதை)</h4>
-                        <p><strong>6.1:</strong> Ruthra departs via underwater secret route.</p>
-                        <p><strong>TAM:</strong> ரகசிய நீர்வழிப் பாதையில் புறப்படுகிறான்.</p>
-                        <p><strong>Gameplay:</strong> Exploration gameplay.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>6.2:</strong> Karuppasamy illusion scares guards.</p>
-                        <p><strong>TAM:</strong> கருப்பசாமி மாயை; வீரர்கள் ஓடுகின்றனர்.</p>
-                        <p><strong>Gameplay:</strong> Light puzzle: Shadow/torch manipulation.</p>
-                    </div>
+            <!-- LEVEL 7 -->
+            <div class="level-header">LEVEL 7 — Capital of Chains (அடிமை நகரம்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">7.1</td>
+                        <td data-label="Summary (ENG)">Ruthra infiltrates capital.</td>
+                        <td data-label="Summary (TAM)">தலைநகரில் ஊடுருவல்.</td>
+                        <td data-label="Gameplay">Free-roam infiltration (AC style).</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">7.2</td>
+                        <td data-label="Summary (ENG)">Witness sculptors tortured.</td>
+                        <td data-label="Summary (TAM)">அடிமைச் சிற்பிகள் சித்ரவதை.</td>
+                        <td data-label="Gameplay">Cutscene triggering emotional arc.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 7 — Capital of Chains (அடிமை நகரம்)</h4>
-                        <p><strong>7.1:</strong> Ruthra infiltrates capital.</p>
-                        <p><strong>TAM:</strong> தலைநகரில் ஊடுருவல்.</p>
-                        <p><strong>Gameplay:</strong> Free-roam infiltration.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>7.2:</strong> Witness sculptors tortured.</p>
-                        <p><strong>TAM:</strong> அடிமைச் சிற்பிகள் சித்ரவதை.</p>
-                        <p><strong>Scene:</strong> Cutscene triggering emotional arc.</p>
-                    </div>
+            <!-- LEVEL 8 -->
+            <div class="level-header">LEVEL 8 — The Moonlit Encounter (நிலவில் சந்திப்பு)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">8.1</td>
+                        <td data-label="Summary (ENG)">Kshala steals food; chased.</td>
+                        <td data-label="Summary (TAM)">க்ஷாலா உணவு திருடி துரத்தல்.</td>
+                        <td data-label="Gameplay">Chase + combat.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">8.2</td>
+                        <td data-label="Summary (ENG)">Ruthra saves her.</td>
+                        <td data-label="Summary (TAM)">ரூத்ரா காப்பாற்றுகிறான்.</td>
+                        <td data-label="Gameplay">Cinematic fight.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 8 — The Moonlit Encounter (நிலவில் சந்திப்பு)</h4>
-                        <p><strong>8.1:</strong> Kshala steals food; chased.</p>
-                        <p><strong>TAM:</strong> க்ஷாலா உணவு திருடி துரத்தல்.</p>
-                        <p><strong>Gameplay:</strong> Chase + combat.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>8.2:</strong> Ruthra saves her.</p>
-                        <p><strong>TAM:</strong> ரூத்ரா காப்பாற்றுகிறான்.</p>
-                        <p><strong>Scene:</strong> Cinematic fight.</p>
-                    </div>
+            <!-- LEVEL 9 -->
+            <div class="level-header">LEVEL 9 — Into the Hidden Valley (பழிப்பள்ளத்தாக்கு)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">9.1</td>
+                        <td data-label="Summary (ENG)">Ruthra follows Kshala to tribal valley.</td>
+                        <td data-label="Summary (TAM)">க்ஷாலாவை பின்தொடர்கிறான்.</td>
+                        <td data-label="Gameplay">Stealth traversal.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">9.2</td>
+                        <td data-label="Summary (ENG)">Witness Yaali ritual and elders.</td>
+                        <td data-label="Summary (TAM)">யாளி சடங்கு.</td>
+                        <td data-label="Gameplay">Cutscene with fantastical elements.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">9.3</td>
+                        <td data-label="Summary (ENG)">Elder teaches Fear Transformation.</td>
+                        <td data-label="Summary (TAM)">பயம் → யாளி மாற்றத்தின் பாடம்.</td>
+                        <td data-label="Gameplay">Interactive micro-tutorial (stance change preview).</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 9 — Into the Hidden Valley (பழிப்பள்ளத்தாக்கு)</h4>
-                        <p><strong>9.1:</strong> Ruthra follows Kshala to tribal valley.</p>
-                        <p><strong>TAM:</strong> க்ஷாலாவை பின்தொடர்கிறான்.</p>
-                        <p><strong>Gameplay:</strong> Stealth traversal.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>9.2:</strong> Witness Yaali ritual and elders.</p>
-                        <p><strong>TAM:</strong> யாளி சடங்கு.</p>
-                        <p><strong>Scene:</strong> Cutscene with fantastical elements.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>9.3:</strong> Elder teaches Fear Transformation.</p>
-                        <p><strong>TAM:</strong> பயம் → யாளி மாற்றத்தின் பாடம்.</p>
-                        <p><strong>Gameplay:</strong> Interactive micro-tutorial.</p>
-                    </div>
+            <!-- LEVEL 10 -->
+            <div class="level-header">LEVEL 10 — The Island of Secrets (ரகசிய தீவு)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">10.1</td>
+                        <td data-label="Summary (ENG)">Ruthra returns home; silent change noticed.</td>
+                        <td data-label="Summary (TAM)">மாறிய ரூத்ரா தீவுக்கு திரும்புகிறான்.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">10.2</td>
+                        <td data-label="Summary (ENG)">Royal summon for Sidh.</td>
+                        <td data-label="Summary (TAM)">சித்திற்கு அரச அழைப்பு.</td>
+                        <td data-label="Gameplay">Dialogue.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 10 — The Island of Secrets (ரகசிய தீவு)</h4>
-                        <p><strong>10.1:</strong> Ruthra returns home; silent change noticed.</p>
-                        <p><strong>TAM:</strong> மாறிய ரூத்ரா தீவுக்கு திரும்புகிறான்.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>10.2:</strong> Royal summon for Sidh.</p>
-                        <p><strong>TAM:</strong> சித்திற்கு அரச அழைப்பு.</p>
-                        <p><strong>Scene:</strong> Dialogue.</p>
-                    </div>
+            <!-- LEVEL 11 -->
+            <div class="level-header">LEVEL 11 — Council of Death (மரண சபை)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">11.1</td>
+                        <td data-label="Summary (ENG)">Sidh reaches palace.</td>
+                        <td data-label="Summary (TAM)">சித்தம் அரண்மனைக்கு.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">11.2</td>
+                        <td data-label="Summary (ENG)">Witness minister’s execution.</td>
+                        <td data-label="Summary (TAM)">அமைச்சர் தலை துண்டிப்பு.</td>
+                        <td data-label="Gameplay">Cinematic shock moment.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">11.3</td>
+                        <td data-label="Summary (ENG)">Astrology prophecy revealed.</td>
+                        <td data-label="Summary (TAM)">ஜோதிடரின் தீர்க்கதரிசனம்.</td>
+                        <td data-label="Gameplay">Lore cutscene.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 11 — Council of Death (மரண சபை)</h4>
-                        <p><strong>11.1:</strong> Sidh reaches palace.</p>
-                        <p><strong>TAM:</strong> சித்தம் அரண்மனைக்கு.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>11.2:</strong> Witness minister’s execution.</p>
-                        <p><strong>TAM:</strong> அமைச்சர் தலை துண்டிப்பு.</p>
-                        <p><strong>Scene:</strong> Cinematic shock moment.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>11.3:</strong> Astrology prophecy revealed.</p>
-                        <p><strong>TAM:</strong> ஜோதிடரின் தீர்க்கதரிசனம்.</p>
-                        <p><strong>Scene:</strong> Lore cutscene.</p>
-                    </div>
+            <!-- LEVEL 12 -->
+            <div class="level-header">LEVEL 12 — The Lie and the Ambush (பொய் & பதுங்கித் தாக்குதல்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">12.1</td>
+                        <td data-label="Summary (ENG)">Ruthra lies to Kshala about Sidh betrayal.</td>
+                        <td data-label="Summary (TAM)">சித்தம் துரோகம் செய்ததாக ரூத்ரா பொய்.</td>
+                        <td data-label="Gameplay">Dialogue cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">12.2</td>
+                        <td data-label="Summary (ENG)">Forest ambush changes destiny.</td>
+                        <td data-label="Summary (TAM)">காடில் பதுங்கித் தாக்குதல்.</td>
+                        <td data-label="Gameplay">Combat encounter leading to Ruthra falling into river.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 12 — The Lie and the Ambush (பொய் & பதுங்கித் தாக்குதல்)</h4>
-                        <p><strong>12.1:</strong> Ruthra lies to Kshala about Sidh betrayal.</p>
-                        <p><strong>TAM:</strong> சித்தம் துரோகம் செய்ததாக ரூத்ரா பொய்.</p>
-                        <p><strong>Scene:</strong> Dialogue cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>12.2:</strong> Forest ambush changes destiny.</p>
-                        <p><strong>TAM:</strong> காடில் பதுங்கித் தாக்குதல்.</p>
-                        <p><strong>Gameplay:</strong> Combat encounter leading to Ruthra falling into river.</p>
-                    </div>
+            <!-- LEVEL 13 -->
+            <div class="level-header">LEVEL 13 — Truth in the Dark (இருளின் உண்மை)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">13.1</td>
+                        <td data-label="Summary (ENG)">Sidh captive; reveals full truth.</td>
+                        <td data-label="Summary (TAM)">முழு உண்மையைச் சித் வெளிப்படுத்துகிறார்.</td>
+                        <td data-label="Gameplay">Heavy emotional cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">13.2</td>
+                        <td data-label="Summary (ENG)">Ruthra collapses emotionally.</td>
+                        <td data-label="Summary (TAM)">ரூத்ரா மனம் உடைதல்.</td>
+                        <td data-label="Gameplay">Cinematic.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 13 — Truth in the Dark (இருளின் உண்மை)</h4>
-                        <p><strong>13.1:</strong> Sidh captive; reveals full truth.</p>
-                        <p><strong>TAM:</strong> முழு உண்மையைச் சித் வெளிப்படுத்துகிறார்.</p>
-                        <p><strong>Scene:</strong> Heavy emotional cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>13.2:</strong> Ruthra collapses emotionally.</p>
-                        <p><strong>TAM:</strong> ரூத்ரா மனம் உடைதல்.</p>
-                        <p><strong>Scene:</strong> Cinematic.</p>
-                    </div>
+            <!-- LEVEL 14 -->
+            <div class="level-header">LEVEL 14 — Shards of the Past (கடந்த காலத்தின் சிதறல்கள்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">14.1</td>
+                        <td data-label="Summary (ENG)">Ruthra returns silently.</td>
+                        <td data-label="Summary (TAM)">மௌனமாக திரும்புகிறான்.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">14.2</td>
+                        <td data-label="Summary (ENG)">Mother reveals broken wing armor.</td>
+                        <td data-label="Summary (TAM)">தாய் உடைந்த இறகுகளை காட்டுகிறார்.</td>
+                        <td data-label="Gameplay">Memory vision gameplay.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 14 — Shards of the Past (கடந்த காலத்தின் சிதறல்கள்)</h4>
-                        <p><strong>14.1:</strong> Ruthra returns silently.</p>
-                        <p><strong>TAM:</strong> மௌனமாக திரும்புகிறான்.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>14.2:</strong> Mother reveals broken wing armor.</p>
-                        <p><strong>TAM:</strong> தாய் உடைந்த இறகுகளை காட்டுகிறார்.</p>
-                        <p><strong>Gameplay:</strong> Memory vision gameplay.</p>
-                    </div>
+            <!-- LEVEL 15 -->
+            <div class="level-header">LEVEL 15 — Awakening of the Wing (இறக்கையின் விழிப்பு)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">15.1</td>
+                        <td data-label="Summary (ENG)">Partial transformation begins.</td>
+                        <td data-label="Summary (TAM)">பகுதி மாற்றம்.</td>
+                        <td data-label="Gameplay">New ability unlocked (short glide).</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">15.2</td>
+                        <td data-label="Summary (ENG)">Prison dream with sparrow.</td>
+                        <td data-label="Summary (TAM)">சிட்டுக்குருவியுடன் கனவு.</td>
+                        <td data-label="Gameplay">Dream sequence traversal.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">15.3</td>
+                        <td data-label="Summary (ENG)">Escape from dungeon.</td>
+                        <td data-label="Summary (TAM)">சிறையிலிருந்து தப்பித்தல்.</td>
+                        <td data-label="Gameplay">Stealth + flight hybrid mission.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 15 — Awakening of the Wing (இறக்கையின் விழிப்பு)</h4>
-                        <p><strong>15.1:</strong> Partial transformation begins.</p>
-                        <p><strong>TAM:</strong> பகுதி மாற்றம்.</p>
-                        <p><strong>Gameplay:</strong> New ability unlocked (short glide).</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>15.2:</strong> Prison dream with sparrow.</p>
-                        <p><strong>TAM:</strong> சிட்டுக்குருவியுடன் கனவு.</p>
-                        <p><strong>Gameplay:</strong> Dream sequence traversal.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>15.3:</strong> Escape from dungeon.</p>
-                        <p><strong>TAM:</strong> சிறையிலிருந்து தப்பித்தல்.</p>
-                        <p><strong>Gameplay:</strong> Stealth + flight hybrid mission.</p>
-                    </div>
+            <!-- LEVEL 16 -->
+            <div class="level-header">LEVEL 16 — Echoes of the Temple (கோயிலின் எதிரொலி)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">16.1</td>
+                        <td data-label="Summary (ENG)">Ruthra meets Sidh secretly.</td>
+                        <td data-label="Summary (TAM)">ரகசிய சந்திப்பு.</td>
+                        <td data-label="Gameplay">Dialogue.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">16.2</td>
+                        <td data-label="Summary (ENG)">Kshala confronts him; Elder reveals karma loop.</td>
+                        <td data-label="Summary (TAM)">க்ஷாலா கோபம்; ஞானி உண்மை சொல்வார்.</td>
+                        <td data-label="Gameplay">Lore cutscene.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 16 — Echoes of the Temple (கோயிலின் எதிரொலி)</h4>
-                        <p><strong>16.1:</strong> Ruthra meets Sidh secretly.</p>
-                        <p><strong>TAM:</strong> ரகசிய சந்திப்பு.</p>
-                        <p><strong>Scene:</strong> Dialogue.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>16.2:</strong> Kshala confronts him; Elder reveals karma loop.</p>
-                        <p><strong>TAM:</strong> க்ஷாலா கோபம்; ஞானி உண்மை சொல்வார்.</p>
-                        <p><strong>Scene:</strong> Lore cutscene.</p>
-                    </div>
+            <!-- LEVEL 17 -->
+            <div class="level-header">LEVEL 17 — Wrath of the Gods (தெய்வத்தின் சீற்றம்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">17.1</td>
+                        <td data-label="Summary (ENG)">Ruthra creates divine illusions in capital.</td>
+                        <td data-label="Summary (TAM)">தலைநகரில் தெய்வ மாயை.</td>
+                        <td data-label="Gameplay">Fear-based stealth gameplay.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">17.2</td>
+                        <td data-label="Summary (ENG)">Raya learns winged heir lives.</td>
+                        <td data-label="Summary (TAM)">"இறக்கை வாரிசு உயிரோடு" என்பதை ராயா அறிகிறான்.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 17 — Wrath of the Gods (தெய்வத்தின் சீற்றம்)</h4>
-                        <p><strong>17.1:</strong> Ruthra creates divine illusions in capital.</p>
-                        <p><strong>TAM:</strong> தலைநகரில் தெய்வ மாயை.</p>
-                        <p><strong>Gameplay:</strong> Fear-based stealth gameplay.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>17.2:</strong> Raya learns winged heir lives.</p>
-                        <p><strong>TAM:</strong> "இறக்கை வாரிசு உயிரோடு" என்பதை ராயா அறிகிறான்.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                    </div>
+            <!-- LEVEL 18 -->
+            <div class="level-header">LEVEL 18 — The Royal Test (அரச சோதனை)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">18.1</td>
+                        <td data-label="Summary (ENG)">Ruthra brought before King; silhouette only.</td>
+                        <td data-label="Summary (TAM)">நிழல் அரசன் முன் ரூத்ரா.</td>
+                        <td data-label="Gameplay">Cutscene + arena intro.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">18.2</td>
+                        <td data-label="Summary (ENG)">Mock duel stopped by Virukka.</td>
+                        <td data-label="Summary (TAM)">போலி சண்டை நிறுத்தப்படுகிறது.</td>
+                        <td data-label="Gameplay">Brief combat test gameplay.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 18 — The Royal Test (அரச சோதனை)</h4>
-                        <p><strong>18.1:</strong> Ruthra brought before King; silhouette only.</p>
-                        <p><strong>TAM:</strong> நிழல் அரசன் முன் ரூத்ரா.</p>
-                        <p><strong>Scene:</strong> Cutscene + arena intro.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>18.2:</strong> Mock duel stopped by Virukka.</p>
-                        <p><strong>TAM:</strong> போலி சண்டை நிறுத்தப்படுகிறது.</p>
-                        <p><strong>Gameplay:</strong> Brief combat test gameplay.</p>
-                    </div>
+            <!-- LEVEL 19 -->
+            <div class="level-header">LEVEL 19 — Preparations for Dawn (விடியலுக்கான ஆயத்தம்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">19.1</td>
+                        <td data-label="Summary (ENG)">Sidh disguises as Rajaguru.</td>
+                        <td data-label="Summary (TAM)">சித் ராஜகுருவாக வேடமிடுகிறார்.</td>
+                        <td data-label="Gameplay">Stealth pre-ritual setup.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">19.2</td>
+                        <td data-label="Summary (ENG)">Kshala infiltrates treasury tunnels.</td>
+                        <td data-label="Summary (TAM)">க்ஷாலா சாக்கடையில் நுழைகிறார்.</td>
+                        <td data-label="Gameplay">Infiltration gameplay.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">19.3</td>
+                        <td data-label="Summary (ENG)">Ruthra meditates.</td>
+                        <td data-label="Summary (TAM)">ரூத்ரா தியானம்.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 19 — Preparations for Dawn (விடியலுக்கான ஆயத்தம்)</h4>
-                        <p><strong>19.1:</strong> Sidh disguises as Rajaguru.</p>
-                        <p><strong>TAM:</strong> சித் ராஜகுருவாக வேடமிடுகிறார்.</p>
-                        <p><strong>Gameplay:</strong> Stealth pre-ritual setup.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>19.2:</strong> Kshala infiltrates treasury tunnels.</p>
-                        <p><strong>TAM:</strong> க்ஷாலா சாக்கடையில் நுழைகிறார்.</p>
-                        <p><strong>Gameplay:</strong> Infiltration gameplay.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>19.3:</strong> Ruthra meditates.</p>
-                        <p><strong>TAM:</strong> ரூத்ரா தியானம்.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                    </div>
+            <!-- LEVEL 20 -->
+            <div class="level-header">LEVEL 20 — The River of Fate (விதியின் ஆறு)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">20.1</td>
+                        <td data-label="Summary (ENG)">Ruthra transforms fully into giant Yaali.</td>
+                        <td data-label="Summary (TAM)">முழு யாளி மாற்றம்.</td>
+                        <td data-label="Gameplay">Kaiju-scale traversal.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">20.2</td>
+                        <td data-label="Summary (ENG)">Diverts river toward capital.</td>
+                        <td data-label="Summary (TAM)">ஆற்றைத் திசை திருப்புகிறான்.</td>
+                        <td data-label="Gameplay">Environmental puzzle.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 20 — The River of Fate (விதியின் ஆறு)</h4>
-                        <p><strong>20.1:</strong> Ruthra transforms fully into giant Yaali.</p>
-                        <p><strong>TAM:</strong> முழு யாளி மாற்றம்.</p>
-                        <p><strong>Gameplay:</strong> Kaiju-scale traversal.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>20.2:</strong> Diverts river toward capital.</p>
-                        <p><strong>TAM:</strong> ஆற்றைத் திசை திருப்புகிறான்.</p>
-                        <p><strong>Gameplay:</strong> Environmental puzzle.</p>
-                    </div>
+            <!-- LEVEL 21 -->
+            <div class="level-header">LEVEL 21 — Ritual of Blood (நரபலி சடங்கு)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">21.1</td>
+                        <td data-label="Summary (ENG)">Sidh replaces Rajaguru in ritual.</td>
+                        <td data-label="Summary (TAM)">சடங்கில் சித் இடம் பிடிக்கிறார்.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">21.2</td>
+                        <td data-label="Summary (ENG)">Ruthra chosen as sacrifice.</td>
+                        <td data-label="Summary (TAM)">நரபலிக்குத் தேர்வு.</td>
+                        <td data-label="Gameplay">Cinematic.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 21 — Ritual of Blood (நரபலி சடங்கு)</h4>
-                        <p><strong>21.1:</strong> Sidh replaces Rajaguru in ritual.</p>
-                        <p><strong>TAM:</strong> சடங்கில் சித் இடம் பிடிக்கிறார்.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>21.2:</strong> Ruthra chosen as sacrifice.</p>
-                        <p><strong>TAM:</strong> நரபலிக்குத் தேர்வு.</p>
-                        <p><strong>Scene:</strong> Cinematic.</p>
-                    </div>
+            <!-- LEVEL 22 -->
+            <div class="level-header">LEVEL 22 — The Mother's Curse (தாயின் சாபம்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">22.1</td>
+                        <td data-label="Summary (ENG)">Ruthra brought to platform.</td>
+                        <td data-label="Summary (TAM)">தண்டனை மேடையில் ரூத்ரா.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">22.2</td>
+                        <td data-label="Summary (ENG)">Queen curses Raya.</td>
+                        <td data-label="Summary (TAM)">ராணியின் சாபம்.</td>
+                        <td data-label="Gameplay">Dramatic cinematic.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 22 — The Mother's Curse (தாயின் சாபம்)</h4>
-                        <p><strong>22.1:</strong> Ruthra brought to platform.</p>
-                        <p><strong>TAM:</strong> தண்டனை மேடையில் ரூத்ரா.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>22.2:</strong> Queen curses Raya.</p>
-                        <p><strong>TAM:</strong> ராணியின் சாபம்.</p>
-                        <p><strong>Scene:</strong> Dramatic cinematic.</p>
-                    </div>
+            <!-- LEVEL 23 -->
+            <div class="level-header">LEVEL 23 — The Great Flood (பெருவெள்ளம்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">23.1</td>
+                        <td data-label="Summary (ENG)">Flood bursts into palace.</td>
+                        <td data-label="Summary (TAM)">வெள்ளம் அரண்மனையை உடைக்கிறது.</td>
+                        <td data-label="Gameplay">Chaos gameplay: Run, glide, dodge collapsing structures.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 23 — The Great Flood (பெருவெள்ளம்)</h4>
-                        <p><strong>23.1:</strong> Flood bursts into palace.</p>
-                        <p><strong>TAM:</strong> வெள்ளம் அரண்மனையை உடைக்கிறது.</p>
-                        <p><strong>Gameplay:</strong> Chaos gameplay: Run, glide, dodge collapsing structures.</p>
-                    </div>
+            <!-- LEVEL 24 -->
+            <div class="level-header">LEVEL 24 — Clash of the Wing and Sword (இறக்கை vs வாள்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">24.1</td>
+                        <td data-label="Summary (ENG)">Ruthra rises as winged Yaali; Raya unleashes sword fire.</td>
+                        <td data-label="Summary (TAM)">இறக்கை யாளி vs வாள் தீ.</td>
+                        <td data-label="Gameplay">Final boss battle: Two-phase fight.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">24.2</td>
+                        <td data-label="Summary (ENG)">Kshala frees captives.</td>
+                        <td data-label="Summary (TAM)">க்ஷாலா கைதிகளை விடுவிக்கிறாள்.</td>
+                        <td data-label="Gameplay">Side-event cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">24.3</td>
+                        <td data-label="Summary (ENG)">Kshala’s rhythm restores Ruthra’s focus.</td>
+                        <td data-label="Summary (TAM)">க்ஷாலாவின் தாளம் கவனம் தருகிறது.</td>
+                        <td data-label="Gameplay">Quick-time rhythm support mechanic.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">24.4</td>
+                        <td data-label="Summary (ENG)">Combined effort defeats Raya.</td>
+                        <td data-label="Summary (TAM)">ஒருங்கிணைந்த தாக்குதலில் ராயா வீழ்கிறான்.</td>
+                        <td data-label="Gameplay">Cinematic finisher.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 24 — Clash of the Wing and Sword (இறக்கை vs வாள்)</h4>
-                        <p><strong>24.1:</strong> Ruthra rises as winged Yaali; Raya unleashes sword fire.</p>
-                        <p><strong>TAM:</strong> இறக்கை யாளி vs வாள் தீ.</p>
-                        <p><strong>Gameplay:</strong> Final boss battle: Two-phase fight.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>24.2:</strong> Kshala frees captives.</p>
-                        <p><strong>TAM:</strong> க்ஷாலா கைதிகளை விடுவிக்கிறாள்.</p>
-                        <p><strong>Scene:</strong> Side-event cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>24.3:</strong> Kshala’s rhythm restores Ruthra’s focus.</p>
-                        <p><strong>TAM:</strong> க்ஷாலாவின் தாளம் கவனம் தருகிறது.</p>
-                        <p><strong>Gameplay:</strong> Quick-time rhythm support mechanic.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>24.4:</strong> Combined effort defeats Raya.</p>
-                        <p><strong>TAM:</strong> ஒருங்கிணைந்த தாக்குதலில் ராயா வீழ்கிறான்.</p>
-                        <p><strong>Scene:</strong> Cinematic finisher.</p>
-                    </div>
+            <!-- LEVEL 25 -->
+            <div class="level-header">LEVEL 25 — New Dawn (புதிய விடியல்)</div>
+            <table class="level-table">
+                <tbody>
+                    <tr>
+                        <td data-label="S.No">25.1</td>
+                        <td data-label="Summary (ENG)">Queen ends slavery; Sidh advisor; Kshala protector.</td>
+                        <td data-label="Summary (TAM)">அடிமைத்தனம் முடிவு; சித் ஆலோசகர்; க்ஷாலா பாதுகாவலர்.</td>
+                        <td data-label="Gameplay">Cutscene.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">25.2</td>
+                        <td data-label="Summary (ENG)">Ruthra walks to rooftop, wings open.</td>
+                        <td data-label="Summary (TAM)">ரூத்ரா மாடியில் இறக்கை விரிக்கிறான்.</td>
+                        <td data-label="Gameplay">Final cinematic + free camera moment.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="S.No">25.3</td>
+                        <td data-label="Summary (ENG)">Ruthra flies toward sunrise; karmic loop ends.</td>
+                        <td data-label="Summary (TAM)">சூரியோதயத்துக்கு மேலே பறக்கிறான்; கர்மசுழல் முடிந்தது.</td>
+                        <td data-label="Gameplay">Ending Cutscene + Credits.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <div class="level-card">
-                        <h4>LEVEL 25 — New Dawn (புதிய விடியல்)</h4>
-                        <p><strong>25.1:</strong> Queen ends slavery; Sidh advisor; Kshala protector.</p>
-                        <p><strong>TAM:</strong> அடிமைத்தனம் முடிவு; சித் ஆலோசகர்; க்ஷாலா பாதுகாவலர்.</p>
-                        <p><strong>Scene:</strong> Cutscene.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>25.2:</strong> Ruthra walks to rooftop, wings open.</p>
-                        <p><strong>TAM:</strong> ரூத்ரா மாடியில் இறக்கை விரிக்கிறான்.</p>
-                        <p><strong>Scene:</strong> Final cinematic + free camera moment.</p>
-                        <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-                        <p><strong>25.3:</strong> Ruthra flies toward sunrise; karmic loop ends.</p>
-                        <p><strong>TAM:</strong> சூரியோதயத்துக்கு மேலே பறக்கிறான்; கர்மசுழல் முடிந்தது.</p>
-                        <p><strong>Scene:</strong> Ending Cutscene + Credits.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
