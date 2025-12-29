@@ -1,0 +1,3 @@
+@echo off
+chcp 65001 >nul
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$file='y:\WEBSITE\KarmaRebelsPitch\index.html'; $lines=[System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8); $lines[155]='                    <h4 style=\"color: var(--neon-cyan); margin-bottom: 0.8rem;\">3.1. Lemuria – The Lost Continent</h4>'; $lines[199]='                <p style=\"color: #ccc; line-height: 1.6; margin-bottom: 1rem;\"><strong>Approx. 6th–7th Century South India – Irunda Kaalam (இருண்ட காலம்)</strong></p>'; [System.IO.File]::WriteAllLines($file, $lines, (New-Object System.Text.UTF8Encoding $true)); Write-Host 'Fixed!' -ForegroundColor Green"

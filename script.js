@@ -51,6 +51,30 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(el);
     });
+
+    // Narrative Section Toggle
+    const narrativeToggleBtn = document.getElementById('narrative-toggle');
+    const narrativeDetails = document.getElementById('narrative-details');
+
+    if (narrativeToggleBtn && narrativeDetails) {
+        narrativeToggleBtn.addEventListener('click', () => {
+            const isHidden = narrativeDetails.style.display === 'none';
+            narrativeDetails.style.display = isHidden ? 'block' : 'none';
+
+            // Update Button Text
+            if (isHidden) {
+                narrativeToggleBtn.innerHTML = 'Hide Story & World Details <span id="toggle-icon">▲</span>';
+                // Small delay to allow display:block to apply before scrolling
+                setTimeout(() => {
+                    const yOffset = -100; // Offset for fixed header
+                    const y = narrativeDetails.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }, 50);
+            } else {
+                narrativeToggleBtn.innerHTML = 'Explore Story & World Details <span id="toggle-icon">▼</span>';
+            }
+        });
+    }
 });
 
 // Parallax Mouse-Tracking Effect for Hero Section

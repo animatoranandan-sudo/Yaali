@@ -1,0 +1,33 @@
+
+#	Scene Title / Tagline	SECOND HALF
+27	The Hollow Return	Ruthra returns to the island silently through the tunnel. Koran notices his trembling hands and haunted stare. The prince walks past everyone without a word.
+28	The Hidden Chest	Alone at night, Ruthra questions his mother about his father, Cheliya. The Queen reluctantly opens a sealed chest containing old relics — rusted armguards, broken feathers of leather and metal.
+29	The Awakening Pulse	When Ruthra touches the relics, faint veins of light ripple across them — the armor responds to his heartbeat. He collapses, seeing flashes of Cheliya soaring with the wings in memory.
+30	The Imperial Summons	The next morning, imperial soldiers arrive with a scroll. Rajaguru Viruka demands the island’s prince be brought to court. Queen panics, but Sidh quietly says, “He must go. I’ll follow.”
+31	The Departure	Ruthra boards the imperial barge with calm acceptance. The Queen watches from the pier, unaware her son carries both mask and armor within.
+32	The Arrival at Capital	At the marble gates of the Empire, Ruthra sees slaves dragging stone blocks for the temple — Yali carvings half-complete, chained artisans hammering in rhythm. The sound cuts deep.
+33	The Imprisonment	Viruka greets him coldly, pretending courtesy before ordering: “Hold him beneath the palace. No sunlight until the ritual.” Ruthra is locked in an underground cell carved from temple stone.
+34	The Sparrow Dream	Inside the darkness, Ruthra dozes. A sparrow enters through the ceiling vent, pecking near him. In his dream, wings burst from his back—soft, faint, then real. The bird flies out; he follows in spirit.
+35	The Transformation Spark	Ruthra awakens, finds feathers of light scattered around. He stands, half-human, half-winged for seconds — terrified yet awed. The Yali words of Kshala’s tribe echo in his mind: “Fear becomes form.”
+36	The Sky Eye	Using his partial transformation, Ruthra escapes his cell at night, gliding through shafts and terraces. From above, he spies the entire capital — treasury vaults, temple courtyard, and the river’s origin beyond the mountains.
+37	The Secret Meeting with Sidh	Ruthra meets Sidh in disguise beneath the temple scaffold. Sidh whispers: “The Sword’s power is awakening. Stay silent till the right time.” Ruthra nods, more resolved than ever.
+38	The Reunion with Kshala	In the border forest, Ruthra finds Kshala. When he removes his hood, her eyes widen — shock, anger, and pain. She strikes his chest, shouting, “You lied!” Tears blur her fury; she collapses into his arms. They plan together in the moonlight: he will stop the Sword, she will free her tribe.
+39	The Karuppusamy Trick – Capital Night	Returning to the capital, Ruthra uses fire and sound once again around the tower shrines. Shadows of idols move; bells ring without hands. Soldiers flee, calling it “the deity’s wrath.” He slips back into his cell unnoticed.
+40	The Emperor’s Doubt	Raya hears whispers of omens and truths: “The Winged Heir lives.” Rage overtakes him. “Test him. Let me see the boy’s worth.”
+		
+41	Arena Trial	In the grand courtyard, Ruthra is brought before the Emperor. Raya challenges him to a duel. Ruthra stays passive, letting the Sword’s arrogance display itself. Viruka stops the King: “Do not wound the prey before the rite.”
+42	The Night Before the Sacrifice	Sidh and Kshala separately prepare their parts. Sidh replaces ritual scrolls and disguises himself as Rajaguru. Kshala enters the palace sewer to reach the treasury. Ruthra meditates, waiting for dawn.
+43	The Transformation of Dawn	Ruthra transforms fully into a gigantic Winged Yali. He bursts from his cell, flies to the mountain source, and moves the colossal stone that redirects the river toward the capital. The flood countdown begins.
+44	The Substitution	At the temple, Sidh ties the real Rajaguru inside a half-dug shrine and takes his place in the ceremony. The crowd gathers as the water rushes unseen through valleys.
+45	The Execution Day	Ruthra is brought to the gallows. The Queen, summoned, watches helplessly. The Sword glows crimson in Raya’s hands. She curses him softly: “Your arrogance shall drown itself.”
+46	The Flood Strikes	As the King raises his sword, Ruthra’s wings ignite. The floodwater surges through palace gates, crashing walls and soldiers. Chaos reigns.
+47	The Sky-Yali vs The Sword	In the storming water, Ruthra ascends midair as a colossal Winged Yali — lion’s roar, elephant’s strength, horse’s speed. Raya unleashes his Sword’s demonic fire. Earth power versus Sky power collide in thunderous fury.
+48	Treasury Heist	Amid the chaos, Kshala and her tribe raid the treasury vaults, rescuing captives and freeing the animals once used in temple rituals. The Empire’s wealth turns into liberation.
+49	The Final Duel	Exhausted, Ruthra falters. Kshala appears atop the collapsing arch, performing the Yali control rhythm — stone-clicks, breath, and hand gestures. Ruthra regains focus; fear dissolves into calm clarity.
+50	The Fall of the Sword	The Sword’s fire dies against the rising flood. Ruthra pierces Raya’s armor and ends him with Sidh’s help. The empire’s bells fall silent for the first time.
+51	Aftermath – The New Dawn	The Queen takes the throne, decreeing an end to slavery. Sidh becomes her advisor; Kshala guards the sculptors’ freedom. The palace rebuilds around mercy, not might.
+52	Final Vision – The Sky and the Stone	Ruthra walks to the palace terrace. He sees carvings of Yali everywhere — not beasts of fear, but guardians of strength. He spreads his wings one last time, takes flight above the new sun. Title Fade: “SWORD vs WINGS.”
+
+
+
+

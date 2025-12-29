@@ -1,0 +1,3 @@
+@echo off
+chcp 65001 >nul
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$file='y:\WEBSITE\KarmaRebelsPitch\index.html'; $lines=[System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8); $lines = $lines[0..199] + $lines[201..($lines.Count-1)]; $lines[205]='                    <li>Dynasties like Chera–Chola–Pandya lost clarity</li>'; $lines[207]='                    <li>No major religion was highlighted – pure ethics & wisdom flourished</li>'; [System.IO.File]::WriteAllLines($file, $lines, (New-Object System.Text.UTF8Encoding $true)); Write-Host 'Fixed all remaining dashes!' -ForegroundColor Green"
