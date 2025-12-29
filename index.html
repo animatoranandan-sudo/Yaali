@@ -43,110 +43,193 @@
 
         <div class="button-grid" style="position: relative; z-index: 100;">
             <a href="game_pitch.html" class="neon-btn red-btn">GAME PITCH</a>
-            <a href="#story" class="neon-btn">STORY</a>
-            <a href="#synopsis" class="neon-btn">SYNOPSIS</a>
-            <a href="#mythology" class="neon-btn">MYTHOLOGY</a>
-            <a href="#character-gallery" class="neon-btn">CHARACTERS</a> // Updated Link
-            <a href="#location-gallery" class="neon-btn">LOCATIONS</a> // Updated Link
+            <a href="#narrative-toggle" class="neon-btn"
+                onclick="document.getElementById('narrative-toggle').click();">EXPLORE STORY & WORLD</a>
+            <a href="#character-gallery" class="neon-btn">CHARACTERS</a>
+            <a href="#watch-animatic" class="neon-btn">STORYBOARD & ANIMATIC</a>
+            <a href="#location-gallery" class="neon-btn">LOCATIONS</a>
             <a href="#scenes" class="neon-btn">SCENES</a>
             <a href="#previz" class="neon-btn">PREVIZ</a>
             <a href="#team" class="neon-btn">TEAM</a>
         </div>
     </section>
 
-    <!-- Logline / Story Section -->
-    <section id="story" class="content-section alt-bg">
-        <h2 class="section-title">LOGLINE</h2>
-        <div class="container">
-            <div class="logline-grid"
-                style="display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 800px; margin: 0 auto; text-align: left; background: #111; padding: 2rem; border-radius: 10px; border: 1px solid #333;">
-                <p><strong style="color: var(--neon-red);">Inciting Incident:</strong> After being rescued by a
-                    priest.
+    <!-- USP & Animatic Section -->
+    <section id="usp-animatic" class="content-section" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container" style="max-width: 900px; text-align: left; color: #ccc;">
+
+            <!-- USP -->
+            <div style="margin-bottom: 3rem;">
+                <h2
+                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--neon-red); margin-bottom: 1rem; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">
+                    USP</h2>
+                <p style="font-size: 1.1rem; line-height: 1.6; font-weight: bold; color: #fff;">
+                    An original South-Indian myth-inspired action drama, visualized through finished
+                    animatics to prove tone, scale, and feasibility before production.
                 </p>
-                <p><strong style="color: var(--neon-cyan);">Protagonist:</strong> Colony prince and alienated as
-                    thief.
+                <hr style="border: 0; border-top: 1px solid #333; margin: 2rem 0;">
+            </div>
+
+            <!-- Story Focus -->
+            <div style="margin-bottom: 3rem;">
+                <h2
+                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--neon-red); margin-bottom: 1rem; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">
+                    Story Focus</h2>
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                    Set in ancient South India, marked by fragmented power and ongoing conflict, the story follows
+                    two individuals who find common ground against a brutal enemy.
+                    Their alliance grows by choice, with emotion and trust developing through action and shared
+                    struggle.
                 </p>
-                <p><strong style="color: var(--neon-orange);">Action:</strong> Sets out to rescue his freedom by
-                    finding
-                    magical power.</p>
-                <p><strong style="color: var(--neon-purple);">Antagonist:</strong> A brutal king having supernatural
-                    power sword.</p>
+            </div>
+
+            <!-- Proof of Concept -->
+            <div style="margin-bottom: 3rem;">
+                <h2
+                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--neon-red); margin-bottom: 1rem; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">
+                    Proof of Concept — Key Sequence Animatic</h2>
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    A completed storyboard animatic presenting the <strong>first encounter and alliance</strong> between
+                    the two
+                    leads.
+                </p>
+
+                <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem;">Sequence highlights:</h4>
+                <ul style="list-style-type: disc; padding-left: 2rem; margin-bottom: 2rem; line-height: 1.6;">
+                    <li>Moonlit palace exterior and controlled entry points</li>
+                    <li>A tribal woman fleeing soldiers; a masked thief intervenes</li>
+                    <li>Initial misunderstanding and brief clash</li>
+                    <li>Trapped inside a sealed chamber as the outer doors are locked</li>
+                    <li>A contained monster triggers a structural collapse by pulling its chains</li>
+                    <li>An animal threat is subdued through the woman’s tribal knowledge, not force</li>
+                    <li>Escape through dangerous rock paths leading toward waterfalls</li>
+                    <li>A silent closing moment where curiosity, respect, and restraint replace fear</li>
+                </ul>
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                    This sequence demonstrates <strong>action staging, emotional progression, and world logic</strong>
+                    entirely
+                    through visual storytelling.
+                </p>
+
+                <div id="watch-animatic" style="text-align: center; margin-top: 2rem;">
+                    <video width="100%" controls
+                        style="max-width: 100%; border: 1px solid #666; border-radius: 8px; box-shadow: 0 0 15px rgba(200, 200, 200, 0.15);">
+                        <source src="../Gamepitch/Slice/Animatic/Animatic Seq_12.mov" type="video/mp4">
+                        <source src="../Gamepitch/Slice/Animatic/Animatic Seq_12.mov" type="video/quicktime">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Synopsis -->
-    <section id="synopsis" class="content-section">
+    <!-- Narrative Toggle Section -->
+    <section class="content-section" style="padding-bottom: 0;">
         <div class="container" style="text-align: center;">
-            <img src="images/Assets/Synopsis-title.png" alt="Synopsis"
-                style="max-width: 100%; height: auto; margin-bottom: 2rem;">
-            <div style="text-align: left; max-width: 800px; margin: 0 auto; color: #ccc; line-height: 1.8;">
-                <p style="margin-bottom: 1rem;"><strong style="color: var(--neon-red);">Setting:</strong> 6th
-                    century
-                    Southern India</p>
-                <p>
-                    Prince Ruthra, alienated as a thief after his father's death, embarks on a journey to find a
-                    magical
-                    power that can restore his freedom. With the help of his lover and fellow thief, Kshala,
-                    they
-                    challenge the ruthless Emperor Raya, who possesses a supernatural sword. Together, they aim
-                    to
-                    overthrow the empire, restore justice, and uncover the truth behind their intertwined
-                    destinies.
-                    Ruthra must master the ancient Yaali philosophy—transforming his fear into the ancestral
-                    Wing
-                    Power—to defeat Raya's magical Sword and end the tyranny that began in the Cave of Destiny.
-                </p>
-            </div>
+            <button id="narrative-toggle" class="neon-btn cyan-btn"
+                style="margin: 0 auto; font-size: 1.2rem; padding: 1rem 2rem;">
+                Explore Story & World Details <span id="toggle-icon">▼</span>
+            </button>
         </div>
     </section>
 
-    <!-- Mythology / Context -->
-    <section id="mythology" class="content-section alt-bg">
-        <h2 class="section-title">CONTEXT & LORE</h2>
-        <div class="container">
-            <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
-                <div>
-                    <h3 style="color: var(--neon-cyan); margin-bottom: 1rem;">1. Story World Summary</h3>
-                    <p style="color: #ccc; line-height: 1.6; margin-bottom: 2rem;">
-                        The story is set in a period of Mystical Realism in 6th century South India,
-                        characterized by
-                        historic Dravidian culture and ancient fantasy elements. The central conflict originates
-                        in the
-                        Cave of Destiny, where two princes chose relics: Prince Raya (the Magic Sword of Pride)
-                        and
-                        Prince Cheliya (the Winged Armor of Awareness). Raya kills Cheliya and becomes a tyrant
-                        Emperor.
-                        Cheliya's exiled son, Prince Ruthra, raised in secret on an island colony, rises as a
-                        masked
-                        rebel. Guided by his mentor Sion and the fierce rebel Kshala, Ruthra must awaken his
-                        ancestral
-                        Wing Power, confront his fear through the Yaali philosophy, and lead a rebellion to
-                        dismantle
-                        Raya's empire.
+    <!-- Collapsible Narrative Container -->
+    <div id="narrative-details" style="display: none;">
+        <!-- Logline / Story Section -->
+        <section id="story" class="content-section alt-bg">
+            <h2 class="section-title">LOGLINE</h2>
+            <div class="container">
+                <div class="logline-grid"
+                    style="display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 800px; margin: 0 auto; text-align: left; background: #111; padding: 2rem; border-radius: 10px; border: 1px solid #333;">
+                    <p><strong style="color: var(--neon-red);">Inciting Incident:</strong> After being rescued by a
+                        priest.
+                    </p>
+                    <p><strong style="color: var(--neon-cyan);">Protagonist:</strong> Colony prince and alienated as
+                        thief.
+                    </p>
+                    <p><strong style="color: var(--neon-orange);">Action:</strong> Sets out to rescue his freedom by
+                        finding
+                        magical power.</p>
+                    <p><strong style="color: var(--neon-purple);">Antagonist:</strong> A brutal king having supernatural
+                        power sword.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis -->
+        <section id="synopsis" class="content-section">
+            <div class="container" style="text-align: center;">
+                <img src="images/Assets/Synopsis-title.png" alt="Synopsis"
+                    style="max-width: 100%; height: auto; margin-bottom: 2rem;">
+                <div style="text-align: left; max-width: 800px; margin: 0 auto; color: #ccc; line-height: 1.8;">
+                    <p style="margin-bottom: 1rem;"><strong style="color: var(--neon-red);">Setting:</strong> 6th
+                        century
+                        Southern India</p>
+                    <p>
+                        Prince Ruthra, alienated as a thief after his father's death, embarks on a journey to find a
+                        magical
+                        power that can restore his freedom. With the help of his lover and fellow thief, Kshala,
+                        they
+                        challenge the ruthless Emperor Raya, who possesses a supernatural sword. Together, they aim
+                        to
+                        overthrow the empire, restore justice, and uncover the truth behind their intertwined
+                        destinies.
+                        Ruthra must master the ancient Yaali philosophy—transforming his fear into the ancestral
+                        Wing
+                        Power—to defeat Raya's magical Sword and end the tyranny that began in the Cave of Destiny.
                     </p>
                 </div>
-                <div>
-                    <h3 style="color: var(--neon-purple); margin-bottom: 1rem;">2. Core Mythology: The Yaali
-                        Concept</h3>
-                    <p style="color: #ccc; line-height: 1.6;">
-                        The Yaali (ருத்ர்) is not merely a creature—it is the philosophical stone of the
-                        sculptures. The
-                        Paazhi Maakal, a tribal sculptor clan, discovered this truth: <strong
-                            style="color: var(--neon-red);">"Fear → Focus → Survival Instinct → Overwhelming
-                            power."</strong> Master sculptors hunted by the empire align their heartbeat with the
-                        life
-                        frequency technique, releasing the Rappusyant (Fear Illusions) with their sonic
-                        alignment. This
-                        technique releases the life trapped in stone using the mirror and divine channel
-                        (astronomy)
-                        alignment. Ruthra's journey is to master this ancestral power—transforming his fear into
-                        the
-                        form of a gigantic Winged Yaali, capable of challenging Raya's Sword.
+            </div>
+        </section>
+
+        <!-- Mythology / Context -->
+        <section id="mythology" class="content-section alt-bg">
+            <h2 class="section-title">CONTEXT & LORE</h2>
+            <div class="container">
+                <div class="grid-2"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                    <div>
+                        <h3 style="color: var(--neon-cyan); margin-bottom: 1rem;">1. Story World Summary</h3>
+                        <p style="color: #ccc; line-height: 1.6; margin-bottom: 2rem;">
+                            The story is set in a period of Mystical Realism in 6th century South India,
+                            characterized by
+                            historic Dravidian culture and ancient fantasy elements. The central conflict originates
+                            in the
+                            Cave of Destiny, where two princes chose relics: Prince Raya (the Magic Sword of Pride)
+                            and
+                            Prince Cheliya (the Winged Armor of Awareness). Raya kills Cheliya and becomes a tyrant
+                            Emperor.
+                            Cheliya's exiled son, Prince Ruthra, raised in secret on an island colony, rises as a
+                            masked
+                            rebel. Guided by his mentor Sion and the fierce rebel Kshala, Ruthra must awaken his
+                            ancestral
+                            Wing Power, confront his fear through the Yaali philosophy, and lead a rebellion to
+                            dismantle
+                            Raya's empire.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--neon-purple); margin-bottom: 1rem;">2. Core Mythology: The Yaali
+                            Concept</h3>
+                        <p style="color: #ccc; line-height: 1.6;">
+                            The Yaali (ருத்ர்) is not merely a creature—it is the philosophical stone of the
+                            sculptures. The
+                            Paazhi Maakal, a tribal sculptor clan, discovered this truth: <strong
+                                style="color: var(--neon-red);">"Fear → Focus → Survival Instinct → Overwhelming
+                                power."</strong> Master sculptors hunted by the empire align their heartbeat with the
+                            life
+                            frequency technique, releasing the Rappusyant (Fear Illusions) with their sonic
+                            alignment. This
+                            technique releases the life trapped in stone using the mirror and divine channel
+                            (astronomy)
+                            alignment. Ruthra's journey is to master this ancestral power—transforming his fear into
+                            the
+                            form of a gigantic Winged Yaali, capable of challenging Raya's Sword.
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Character Gallery Section -->
     <section id="character-gallery" class="content-section">
