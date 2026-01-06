@@ -330,6 +330,16 @@ body {
     gap: 2rem;
 }
 
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+#character-gallery .container {
+    max-width: 95%;
+}
+
 /* Cards */
 .char-card,
 .loc-card,
@@ -429,7 +439,8 @@ body {
 
     .grid-2,
     .grid-3,
-    .grid-4 {
+    .grid-4,
+    .grid-5 {
         grid-template-columns: 1fr;
     }
 
