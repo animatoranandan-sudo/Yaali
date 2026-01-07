@@ -363,7 +363,12 @@
     <section id="char-loc-desc" class="content-section">
         <h2 class="section-title">CHARACTER & LOCATION DESCRIPTIONS</h2>
         <div class="container">
-            <div class="desc-section">
+            <!-- Toggle Button -->
+            <button id="desc-toggle" class="neon-btn"
+                style="width: 100%; max-width: 400px; margin: 0 auto 2rem; display: block; cursor: pointer;">
+                View Character & Location Descriptions <span id="desc-toggle-icon">▼</span>
+            </button>
+            <div id="desc-details" class="desc-section" style="display: none;">
                 <!-- Character Descriptions -->
                 <div id="char-desc">
                     <h3
@@ -545,7 +550,13 @@
     <section id="scenes" class="content-section alt-bg">
         <h2 class="section-title">SCENE LIST</h2>
         <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 3rem; align-items: start;">
+            <!-- Toggle Button -->
+            <button id="scenes-toggle" class="neon-btn"
+                style="width: 100%; max-width: 400px; margin: 0 auto 2rem; display: block; cursor: pointer;">
+                View Scenes List <span id="scenes-toggle-icon">▼</span>
+            </button>
+            <div id="scenes-details"
+                style="display: none; grid-template-columns: 1fr auto 1fr; gap: 3rem; align-items: start;">
                 <!-- ACT 1: Left Column -->
                 <div>
                     <h3 style="color: var(--neon-cyan); margin-bottom: 1.5rem; text-align: left;">ACT 1: THE MASKED

@@ -102,6 +102,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Character & Location Description Toggle
+    const descToggleBtn = document.getElementById('desc-toggle');
+    const descDetails = document.getElementById('desc-details');
+
+    if (descToggleBtn && descDetails) {
+        descToggleBtn.addEventListener('click', () => {
+            const isHidden = descDetails.style.display === 'none';
+            descDetails.style.display = isHidden ? 'block' : 'none';
+
+            if (isHidden) {
+                descToggleBtn.innerHTML = 'Hide Character & Location Descriptions <span id="desc-toggle-icon">▲</span>';
+                setTimeout(() => {
+                    const yOffset = -100;
+                    const y = descDetails.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }, 50);
+            } else {
+                descToggleBtn.innerHTML = 'View Character & Location Descriptions <span id="desc-toggle-icon">▼</span>';
+            }
+        });
+    }
+
+    // Scenes List Toggle
+    const scenesToggleBtn = document.getElementById('scenes-toggle');
+    const scenesDetails = document.getElementById('scenes-details');
+
+    if (scenesToggleBtn && scenesDetails) {
+        scenesToggleBtn.addEventListener('click', () => {
+            const isHidden = scenesDetails.style.display === 'none';
+            scenesDetails.style.display = isHidden ? 'grid' : 'none'; // Note: Scenes uses Grid
+
+            if (isHidden) {
+                scenesToggleBtn.innerHTML = 'Hide Scenes List <span id="scenes-toggle-icon">▲</span>';
+                setTimeout(() => {
+                    const yOffset = -100;
+                    const y = scenesDetails.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }, 50);
+            } else {
+                scenesToggleBtn.innerHTML = 'View Scenes List <span id="scenes-toggle-icon">▼</span>';
+            }
+        });
+    }
 });
 
 // Parallax Mouse-Tracking Effect for Hero Section
