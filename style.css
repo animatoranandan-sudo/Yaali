@@ -163,26 +163,30 @@ body {
 
 /* Button Grid */
 .button-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 98%;
+    max-width: 1400px;
+    margin-top: 1rem;
+    overflow-x: auto;
+    /* Allow scroll on very small mobile screens if absolutely needed */
 }
 
 .neon-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 1rem;
+    padding: 0.5rem 0.5rem;
     background: rgba(20, 20, 20, 0.8);
     border: 1px solid var(--neon-cyan);
     border-radius: 5px;
     color: var(--neon-cyan);
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
