@@ -420,6 +420,15 @@ body {
 }
 
 /* Mobile Responsiveness */
+/* Hero Title & Logo Sizing */
+.hero-title-img {
+    max-width: 60%;
+}
+
+.logo-container {
+    max-width: 35%;
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem;
@@ -442,6 +451,14 @@ body {
         width: 100%;
         height: auto;
         aspect-ratio: 16/9;
+    }
+
+    .hero-title-img {
+        max-width: 90%;
+    }
+
+    .logo-container {
+        max-width: 60%;
     }
 
     .section-title {
