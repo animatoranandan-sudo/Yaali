@@ -336,32 +336,15 @@ body {
     gap: 1.5rem;
 }
 
-#usp-animatic .container {
-    max-width: 95%;
-}
-
-#character-gallery .container {
-    max-width: 95%;
-}
-
-#location-gallery .container {
-    max-width: 95%;
-}
-
-#previz .container {
-    max-width: 95%;
-}
-
-#scenes .container {
-    max-width: 95%;
-}
-
-#team .container {
-    max-width: 95%;
-}
-
+#usp-animatic .container,
+#character-gallery .container,
+#location-gallery .container,
+#previz .container,
+#scenes .container,
+#team .container,
 #char-loc-desc .container {
-    max-width: 95%;
+    width: 90%;
+    max-width: 1400px;
 }
 
 /* Cards */
