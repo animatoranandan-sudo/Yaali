@@ -75,6 +75,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Previz Gallery Toggle
+    const previzToggleBtn = document.getElementById('previz-toggle');
+    const previzDetails = document.getElementById('previz-details');
+
+    if (previzToggleBtn && previzDetails) {
+        previzToggleBtn.addEventListener('click', () => {
+            const isHidden = previzDetails.style.display === 'none';
+            previzDetails.style.display = isHidden ? 'block' : 'none';
+
+            // Update Button Text
+            if (isHidden) {
+                previzToggleBtn.innerHTML = 'Hide Previz Gallery <span id="previz-toggle-icon">▲</span>';
+                // Small delay to allow display:block to apply before scrolling
+                setTimeout(() => {
+                    const yOffset = -100; // Offset for fixed header
+                    const y = previzDetails.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    // Only scroll if the section is below the viewport
+                    if (y > window.scrollY + window.innerHeight - 100) {
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                }, 50);
+            } else {
+                previzToggleBtn.innerHTML = 'View Previz Gallery <span id="previz-toggle-icon">▼</span>';
+            }
+        });
+    }
 });
 
 // Parallax Mouse-Tracking Effect for Hero Section

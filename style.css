@@ -336,11 +336,31 @@ body {
     gap: 1.5rem;
 }
 
+#usp-animatic .container {
+    max-width: 95%;
+}
+
 #character-gallery .container {
     max-width: 95%;
 }
 
 #location-gallery .container {
+    max-width: 95%;
+}
+
+#previz .container {
+    max-width: 95%;
+}
+
+#scenes .container {
+    max-width: 95%;
+}
+
+#team .container {
+    max-width: 95%;
+}
+
+#char-loc-desc .container {
     max-width: 95%;
 }
 
