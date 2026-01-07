@@ -340,6 +340,10 @@ body {
     max-width: 95%;
 }
 
+#location-gallery .container {
+    max-width: 95%;
+}
+
 /* Cards */
 .char-card,
 .loc-card,
