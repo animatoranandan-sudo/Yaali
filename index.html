@@ -56,24 +56,51 @@
         </div>
     </section>
 
+    <!-- Teaser Section -->
+    <section class="content-section" style="padding-top: 3rem; padding-bottom: 2rem;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">TEASER</h2>
+            <div class="video-card" style="max-width: 900px; margin: 0 auto;">
+                <video controls
+                    style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; background: #000; object-fit: cover; box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);">
+                    <source src="images/videos/Teaser-Sword vs Wings Yaali.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof of Concept Toggle Section -->
+    <section class="content-section alt-bg" style="padding-bottom: 0;">
+        <div class="container" style="text-align: center;">
+            <button id="poc-toggle" class="neon-btn red-btn"
+                style="margin: 0 auto; font-size: 1.2rem; padding: 1rem 2rem;">
+                View Proof of Concept <span id="poc-toggle-icon">▼</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Collapsible POC Container -->
+    <div id="poc-details" style="display: none;">
+        <section id="poc" class="content-section alt-bg">
+            <h2 class="section-title">PROOF OF CONCEPT — KEY STORY SEQUENCE</h2>
+            <div class="container" style="text-align: center;">
+                <div class="video-card" style="max-width: 900px; margin: 0 auto;">
+                    <video controls
+                        style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; background: #000; object-fit: cover; box-shadow: 0 0 20px rgba(255, 50, 50, 0.3);">
+                        <source src="images/videos/PROOF OF CONCEPT — KEY STORY SEQUENCE.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- USP & Animatic Section -->
     <section id="usp-animatic" class="content-section" style="padding-top: 3rem; padding-bottom: 3rem;">
         <div class="container" style="text-align: left; color: #ccc;">
 
-            <!-- Proof of Concept Video -->
-            <div style="margin-bottom: 3rem;">
-                <h2
-                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--neon-red); margin-bottom: 1rem; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">
-                    PROOF OF CONCEPT — KEY STORY SEQUENCE</h2>
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <video width="100%" controls controlsList="nodownload"
-                        style="max-width: 100%; border: 1px solid #666; border-radius: 8px; box-shadow: 0 0 15px rgba(200, 200, 200, 0.15);">
-                        <source src="images/videos/Story Key Sequence/Story Key Sequence Yaali-1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <hr style="border: 0; border-top: 1px solid #333; margin: 2rem 0;">
-            </div>
+
 
             <!-- USP -->
             <div style="margin-bottom: 3rem;">
@@ -100,11 +127,17 @@
                 </p>
             </div>
 
-            <!-- Proof of Concept -->
-            <div style="margin-bottom: 3rem;">
+            <!-- Proof of Concept (Animatic) -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <button id="animatic-toggle" class="neon-btn red-btn" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                    View Storyboard & Animatic <span id="animatic-toggle-icon">▼</span>
+                </button>
+            </div>
+
+            <div id="animatic-details" style="display: none; margin-bottom: 3rem;">
                 <h2
                     style="font-family: var(--font-heading); font-size: 2rem; color: var(--neon-red); margin-bottom: 1rem; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">
-                    Proof of Concept — Key Sequence Animatic</h2>
+                    Animatic for Sequence 12- Proof of concept</h2>
                 <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
                     A completed storyboard animatic presenting the <strong>first encounter and alliance</strong> between
                     the two
@@ -230,7 +263,7 @@
                         <h3 style="color: var(--neon-purple); margin-bottom: 1rem;">2. Core Mythology: The Yaali
                             Concept</h3>
                         <p style="color: #ccc; line-height: 1.6;">
-                            The Yaali (ருத்ர்) is not merely a creature—it is the philosophical stone of the
+                            The Yaali (யாளி) is not merely a creature—it is the philosophical stone of the
                             sculptures. The
                             Paazhi Maakal, a tribal sculptor clan, discovered this truth: <strong
                                 style="color: var(--neon-red);">"Fear → Focus → Survival Instinct → Overwhelming
@@ -872,6 +905,64 @@
     <footer>
         <p>&copy; 2025 YAALI: KARMA REBELS. All Rights Reserved.</p>
     </footer>
+
+    <!-- Scenes Password Modal -->
+    <div id="password-modal" class="password-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 style="color: var(--neon-cyan); margin-bottom: 1rem; font-family: var(--font-heading);">ENTER PASSWORD
+            </h2>
+            <p style="color: #ccc; margin-bottom: 1.5rem;">Protected Scenes Content</p>
+            <input type="password" id="password-input" placeholder="Enter Password" class="neon-input">
+            <button id="unlock-btn" class="neon-btn red-btn" style="width: 100%; margin-top: 1rem;">UNLOCK</button>
+            <p id="password-error" style="color: var(--neon-red); margin-top: 1rem; display: none;">Incorrect Password
+            </p>
+        </div>
+    </div>
+
+    <!-- Previz Password Modal -->
+    <div id="previz-password-modal" class="password-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal close-previz-modal">&times;</span>
+            <h2 style="color: var(--neon-cyan); margin-bottom: 1rem; font-family: var(--font-heading);">ENTER PASSWORD
+            </h2>
+            <p style="color: #ccc; margin-bottom: 1.5rem;">Protected Previz Gallery</p>
+            <input type="password" id="previz-password-input" placeholder="Enter Password" class="neon-input">
+            <button id="previz-unlock-btn" class="neon-btn red-btn"
+                style="width: 100%; margin-top: 1rem;">UNLOCK</button>
+            <p id="previz-password-error" style="color: var(--neon-red); margin-top: 1rem; display: none;">Incorrect
+                Password</p>
+        </div>
+    </div>
+
+    <!-- POC Password Modal -->
+    <div id="poc-password-modal" class="password-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal close-poc-modal">&times;</span>
+            <h2 style="color: var(--neon-cyan); margin-bottom: 1rem; font-family: var(--font-heading);">ENTER PASSWORD
+            </h2>
+            <p style="color: #ccc; margin-bottom: 1.5rem;">Protected Proof of Concept</p>
+            <input type="password" id="poc-password-input" placeholder="Enter Password" class="neon-input">
+            <button id="poc-unlock-btn" class="neon-btn red-btn" style="width: 100%; margin-top: 1rem;">UNLOCK</button>
+            <p id="poc-password-error" style="color: var(--neon-red); margin-top: 1rem; display: none;">Incorrect
+                Password</p>
+        </div>
+    </div>
+
+    <!-- Animatic Password Modal -->
+    <div id="animatic-password-modal" class="password-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal close-animatic-modal">&times;</span>
+            <h2 style="color: var(--neon-cyan); margin-bottom: 1rem; font-family: var(--font-heading);">ENTER PASSWORD
+            </h2>
+            <p style="color: #ccc; margin-bottom: 1.5rem;">Protected Animatic</p>
+            <input type="password" id="animatic-password-input" placeholder="Enter Password" class="neon-input">
+            <button id="animatic-unlock-btn" class="neon-btn red-btn"
+                style="width: 100%; margin-top: 1rem;">UNLOCK</button>
+            <p id="animatic-password-error" style="color: var(--neon-red); margin-top: 1rem; display: none;">Incorrect
+                Password</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
